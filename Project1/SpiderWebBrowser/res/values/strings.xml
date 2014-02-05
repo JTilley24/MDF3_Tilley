@@ -3,6 +3,6 @@
 
     <string name="app_name">SpiderWeb Browser</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-
+	<string name="goButton">Go</string>
+	<string name="backButton">Back</string>
 </resources>
