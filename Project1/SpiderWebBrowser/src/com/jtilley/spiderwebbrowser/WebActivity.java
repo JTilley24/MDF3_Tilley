@@ -75,6 +75,15 @@ Context mContext;
 				
 				super.onPageStarted(view, url, favicon);
 			}
+
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				// TODO Auto-generated method stub
+				if(view.getTitle() != null){
+					Log.i("TITLE", view.getTitle());
+				}
+				super.onPageFinished(view, url);
+			}
 		});
 		
 		
@@ -106,7 +115,8 @@ Context mContext;
 				// TODO Auto-generated method stub
 				Intent favActivity = new Intent(mContext, FavActivity.class);
 				favActivity.putExtra("URL_NAME", web.getUrl().toString());
-				startActivity(favActivity);
+				favActivity.putExtra("URL_TITLE", web.getTitle().toString());
+				startActivityForResult(favActivity, 0);
 			}
 		});
 		
@@ -119,4 +129,13 @@ Context mContext;
 		return true;
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultsCode, Intent data){
+		if(resultsCode == RESULT_OK && requestCode == 0){
+			Bundle result = data.getExtras();
+			String url = result.getString("URL_OPEN");
+			web.loadUrl(url);
+			
+		}
+	}
 }
