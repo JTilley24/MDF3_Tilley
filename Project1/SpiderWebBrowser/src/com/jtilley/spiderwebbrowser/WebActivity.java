@@ -16,30 +16,39 @@ package com.jtilley.spiderwebbrowser;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 public class WebActivity extends Activity {
 WebView web;
 EditText urlText;
 Button goButton;
 Button backButton;
+ImageButton favButton;
+Context mContext;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_web);
 		
+		mContext = this;
+		
 		web= (WebView) findViewById(R.id.webView);
 		urlText = (EditText) findViewById(R.id.urlInput);
 		goButton = (Button) findViewById(R.id.goButton);
 		backButton = (Button) findViewById(R.id.backButton);
+		favButton = (ImageButton) findViewById(R.id.favButton);
 		
 		Intent intent = getIntent();
 		Uri data = intent.getData();
@@ -65,6 +74,39 @@ Button backButton;
 				Log.i("URL", url.toString());
 				
 				super.onPageStarted(view, url, favicon);
+			}
+		});
+		
+		
+		
+		goButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				web.loadUrl(urlText.getText().toString());
+			}
+		});
+		
+		backButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(web.canGoBack()){
+					web.goBack();
+				}
+			}
+		});
+		
+		favButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent favActivity = new Intent(mContext, FavActivity.class);
+				favActivity.putExtra("URL_NAME", web.getUrl().toString());
+				startActivity(favActivity);
 			}
 		});
 		

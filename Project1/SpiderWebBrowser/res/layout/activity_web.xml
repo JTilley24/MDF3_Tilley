@@ -29,7 +29,7 @@
 	    </EditText>
 	    
 	    <Button
-	        android:name="@+id/goButton"
+	        android:id="@+id/goButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
 	        android:layout_weight="1"
@@ -38,13 +38,23 @@
 	    </Button>
 	    
 	    <Button
-	        android:name="@+id/backButton"
+	        android:id="@+id/backButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:text="@string/backButton"
 	        >
 	    </Button>
+	    
+	    <ImageButton
+	        android:id="@+id/favButton"
+	        android:layout_width="50dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:contentDescription="@string/content"
+	        android:scaleType="fitCenter"
+	        android:src="@drawable/favicon" >
+	    </ImageButton>
 	    
     </LinearLayout>
 
