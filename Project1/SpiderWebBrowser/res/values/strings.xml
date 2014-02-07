@@ -7,9 +7,10 @@
     <string name="backButton">Back</string>
     <string name="content">Image</string>
     <string name="title_activity_fav">FavActivity</string>
-    <string name="addButton">Add</string>
+    <string name="addButton">Add Current Site</string>
     <string name="open">Open</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="list_header">Select Favorites</string>
 
 </resources>

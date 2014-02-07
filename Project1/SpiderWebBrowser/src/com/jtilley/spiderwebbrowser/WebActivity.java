@@ -44,29 +44,31 @@ Context mContext;
 		
 		mContext = this;
 		
-		web= (WebView) findViewById(R.id.webView);
+		web = (WebView) findViewById(R.id.webView);
 		urlText = (EditText) findViewById(R.id.urlInput);
 		goButton = (Button) findViewById(R.id.goButton);
 		backButton = (Button) findViewById(R.id.backButton);
 		favButton = (ImageButton) findViewById(R.id.favButton);
 		
+		//Get Data from Launching Application
 		Intent intent = getIntent();
 		Uri data = intent.getData();
 		
 		Log.i("DATA", data.toString());
 		
+		//Load WebView to Selected Page
 		web.getSettings().setJavaScriptEnabled(true);
 		web.loadUrl(data.toString());
 		
 		web.setWebViewClient(new WebViewClient(){
-
+			//Keep within Application on Page Change
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url) {
 				// TODO Auto-generated method stub
-				
 				return false;
 			}
-
+			
+			//Set Text in URLField
 			@Override
 			public void onPageStarted(WebView view, String url, Bitmap favicon) {
 				// TODO Auto-generated method stub
@@ -75,7 +77,8 @@ Context mContext;
 				
 				super.onPageStarted(view, url, favicon);
 			}
-
+			
+			//Get Title of Current Page
 			@Override
 			public void onPageFinished(WebView view, String url) {
 				// TODO Auto-generated method stub
@@ -86,10 +89,9 @@ Context mContext;
 			}
 		});
 		
-		
-		
+		//Load WebView to Inputed URL
 		goButton.setOnClickListener(new OnClickListener() {
-			
+	
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -97,6 +99,7 @@ Context mContext;
 			}
 		});
 		
+		//Return to previous page in WebView
 		backButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -108,6 +111,7 @@ Context mContext;
 			}
 		});
 		
+		//Open FavActivity and send Current Page Data
 		favButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -129,13 +133,13 @@ Context mContext;
 		return true;
 	}
 
+	//Get URL of Selected Favorite from FavActivity
 	@Override
 	protected void onActivityResult(int requestCode, int resultsCode, Intent data){
 		if(resultsCode == RESULT_OK && requestCode == 0){
 			Bundle result = data.getExtras();
 			String url = result.getString("URL_OPEN");
 			web.loadUrl(url);
-			
 		}
 	}
 }

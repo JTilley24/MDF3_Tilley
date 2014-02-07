@@ -30,6 +30,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class FavActivity extends Activity {
 Button addButton;
@@ -46,14 +47,19 @@ public ArrayList<HashMap<String, String>> favorites;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_fav);
 		
+		this.setTitle("Saved Favorites");
+		
 		context = this;
 		storage = FavStorage.getInstance();
 		
 		addButton = (Button) findViewById(R.id.addButton);
+		favList = (ListView) findViewById(R.id.favList);
 		
+		//Get Data from WebActivity
 		Intent intent = this.getIntent();
 		urlName = intent.getStringExtra("URL_NAME");
 		urlTitle = intent.getStringExtra("URL_TITLE");
+		
 		if(urlName != null){
 			Log.i("URL", urlName);
 		}
@@ -61,9 +67,7 @@ public ArrayList<HashMap<String, String>> favorites;
 			Log.i("TITLE", urlTitle);
 		}
 		
-		favList = (ListView) findViewById(R.id.favList);
-		
-		
+		//Add Current Page from WebActivity to list of Favorites
 		addButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -73,8 +77,10 @@ public ArrayList<HashMap<String, String>> favorites;
 					urlStrings.put("name", urlName);
 					urlStrings.put("title", urlTitle);
 					favorites.add(urlStrings);
+					
 					storage.writeStringFile(context, "favorites", favorites);
 					
+					Toast.makeText(context, urlTitle + " is saved!", Toast.LENGTH_LONG).show();
 					displayFavorites();
 			}
 		});
@@ -89,6 +95,7 @@ public ArrayList<HashMap<String, String>> favorites;
 		return true;
 	}
 	
+	//Display Stored Favorites in ListView
 	public void displayFavorites(){
 		favorites = storage.readStringFile(context, "favorites");
 		ArrayList<String> favStrings = new ArrayList<String>();
@@ -99,6 +106,7 @@ public ArrayList<HashMap<String, String>> favorites;
 				Log.i("SAVED", favorites.get(i).get("title"));
 			}
 		}
+		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, favStrings);
 		
 		favList.setAdapter(adapter);
@@ -115,6 +123,7 @@ public ArrayList<HashMap<String, String>> favorites;
 		});
 	}
 	
+	//Remove Selection from Saved Favorites
 	public void removeItem(int position){
 		favorites.remove(position);
 		
@@ -123,6 +132,7 @@ public ArrayList<HashMap<String, String>> favorites;
 		displayFavorites();
 	}
 	
+	//Open Selection in WebActivity
 	public void openItem(int position){
 		Intent data = new Intent();
 		String url = favorites.get(position).get("name");
@@ -131,7 +141,7 @@ public ArrayList<HashMap<String, String>> favorites;
 		super.finish();
 	}
 	
-	
+	//DialogFragment for Open and Delete of Selection in ListView
 	public static class FavDialog extends DialogFragment{
 		Button openButton;
 		Button deleteButton;
@@ -190,5 +200,4 @@ public ArrayList<HashMap<String, String>> favorites;
 			return view;
 		}		
 	}
-	
 }

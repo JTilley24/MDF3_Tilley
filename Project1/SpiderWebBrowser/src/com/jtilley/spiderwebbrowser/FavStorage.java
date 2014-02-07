@@ -1,5 +1,16 @@
 package com.jtilley.spiderwebbrowser;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	SpiderWeb Browser
+ * 
+ * 	Package:	com.jtilley.spiderwebbrowser
+ * 
+ * 	File: 		FavStorage.java
+ * 	
+ * 	Purpose:	This Class is used to Write and Read Data from Internal Storage. It receives and sends an Array of Hashmaps
+ * 				containing the URL and Title of the Web Page.
+*/
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -35,15 +46,12 @@ public class FavStorage {
 			output = context.openFileOutput(filename, Context.MODE_PRIVATE);
 			ObjectOutputStream object = new ObjectOutputStream(output);
 			object.writeObject(content);
-			//output.write(content.getBytes());
 			Log.i("WRITE STRING FILE", "success");
 		}catch(Exception e){
 			Log.e("WRITE STRING FILE", e.toString());
 		}
 			
 		return result;
-		
-		
 	} 
 	
 	//Access Data from Internal Storage
@@ -54,16 +62,6 @@ public class FavStorage {
 		FileInputStream input = null;
 		
 		try{
-			/*input = context.openFileInput(filename);
-			 BufferedInputStream buffInput = new BufferedInputStream(input);
-			 byte[] contentBytes = new byte[1024];
-			 int bytesRead = 0;
-			 StringBuffer contentBuffer = new StringBuffer();
-			 
-			 while((bytesRead = buffInput.read(contentBytes)) != -1){
-				 content = new String(contentBytes, 0, bytesRead);
-				 contentBuffer.append(content);
-			 }*/
 			input = context.openFileInput(filename);
 			ObjectInputStream object = new ObjectInputStream(input);
 			
