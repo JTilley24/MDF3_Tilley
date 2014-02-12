@@ -1,13 +1,28 @@
 package com.jtilley.pictureplaces;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Calendar;
+
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.media.ExifInterface;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -45,6 +60,64 @@ private static final int CAMERA_REQUEST = 1888;
 
 	public void saveImage(String locName){
 		Toast.makeText(mContext, "Image Saved", Toast.LENGTH_LONG).show();
+		File path = Environment.getExternalStoragePublicDirectory("/PicPlaces/");
+		if(!path.exists()){
+			path.mkdir();
+		}
+		String day = String.valueOf(Calendar.getInstance().getTime().getTime());
+		Log.i("TIME", day);
+		
+		String filename = locName + "_" + day + ".jpg";
+		
+		
+		
+		File file = new File(path, filename);
+		try {
+			OutputStream fos = new FileOutputStream(file);
+			Bitmap bitmap = ((BitmapDrawable)lastPic.getDrawable()).getBitmap();
+			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+			fos.flush();
+			fos.close();
+			exifAttr(filename, file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void exifAttr(String filename, File file){
+		LocationManager lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
+		String provider = lManager.getBestProvider(criteria, false);
+		
+		lManager.requestLocationUpdates(provider, 0, 0, new MyLocationListener());
+		
+		Location location = lManager.getLastKnownLocation(provider);
+		if(location != null){
+			Log.i("LONG", String.valueOf(location.getLongitude()));
+			Log.i("LAT", String.valueOf(location.getLatitude()));
+			
+			ExifInterface exif;
+			
+			
+			
+			try {
+				exif = new ExifInterface(file.getAbsolutePath());
+				exif.setAttribute(ExifInterface.TAG_GPS_LATITUDE, String.valueOf(location.getLatitude()));
+				exif.setAttribute(ExifInterface.TAG_GPS_LONGITUDE, String.valueOf(location.getLongitude()));
+				exif.saveAttributes();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+		
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -113,7 +186,33 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 		
-	
+	private final class MyLocationListener implements LocationListener{
+
+		@Override
+		public void onLocationChanged(Location location) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onProviderDisabled(String provider) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onProviderEnabled(String provider) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
 	
 	
 }
