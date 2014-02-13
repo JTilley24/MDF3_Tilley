@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import org.json.JSONArray;
@@ -32,18 +33,25 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 Context mContext;
 Button camButton;
 Button galleryButton;
+ListView locList;
 ImageView lastPic;
 JSONArray locArray;
 LocStorage storage;
+private LocationManager lManager;
+private String provider;
 
 private static final int CAMERA_REQUEST = 1888;
 	@Override
@@ -65,6 +73,21 @@ private static final int CAMERA_REQUEST = 1888;
 			locArray = new JSONArray();
 		}
 		
+		locList = (ListView) findViewById(R.id.locatList);
+		
+		displayLocations(locArray);
+		locList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> locListView, View view, int position,
+					long row) {
+				// TODO Auto-generated method stub
+				Intent gallery = new Intent(mContext, GalleryActivity.class);
+				gallery.putExtra("LOCATION", locListView.getItemAtPosition(position).toString());
+				startActivity(gallery);	
+			}
+		});
+		
 		camButton = (Button) findViewById(R.id.camButton);
 		galleryButton = (Button) findViewById(R.id.galleryButton);
 		
@@ -84,9 +107,17 @@ private static final int CAMERA_REQUEST = 1888;
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent gallery = new Intent(mContext, GalleryActivity.class);
+				gallery.putExtra("LOCATION", "all");
 				startActivity(gallery);	
 			}
 		});
+		
+		lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
+		criteria.setAccuracy(Criteria.ACCURACY_FINE);
+		provider = lManager.getBestProvider(criteria, false);
+		
+		lManager.requestLocationUpdates(provider, 0, 1, new MyLocationListener());
 	}
 
 	public void saveImage(String locName){
@@ -121,11 +152,6 @@ private static final int CAMERA_REQUEST = 1888;
 	}
 	
 	public void exifAttr(String filename, File file, String locName){
-		LocationManager lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		Criteria criteria = new Criteria();
-		String provider = lManager.getBestProvider(criteria, false);
-		
-		lManager.requestLocationUpdates(provider, 0, 0, new MyLocationListener());
 		
 		Location location = lManager.getLastKnownLocation(provider);
 		if(location != null){
@@ -167,6 +193,24 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	public void displayLocations(JSONArray locArray){
+		ArrayList<String> locStrings = new ArrayList<String>();
+		for(int i=0; i< locArray.length(); i++){
+			try {
+				String tempName = locArray.getJSONObject(i).getString("name");
+				Log.i("LOC_NAME", tempName);
+				locStrings.add(tempName);
+				
+				locList.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, locStrings));
+				
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+	}
+	
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 		if(resultCode == RESULT_OK){
 			if(requestCode == CAMERA_REQUEST){
@@ -177,6 +221,13 @@ private static final int CAMERA_REQUEST = 1888;
 				dialog.show(getFragmentManager(), "dialog");
 			}
 		}
+	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		lManager.requestLocationUpdates(provider, 400, 1, new MyLocationListener());
 	}
 	
 	@Override
@@ -239,6 +290,24 @@ private static final int CAMERA_REQUEST = 1888;
 		public void onLocationChanged(Location location) {
 			// TODO Auto-generated method stub
 			
+			
+			for(int i=0;i < locArray.length();i++){
+				Location tempLocation = new Location("");
+				try {
+					int latitude = (int) locArray.getJSONObject(i).getInt("latitude");
+					int longitude = (int) locArray.getJSONObject(i).getInt("longitude");
+					tempLocation.setLatitude(latitude);
+					tempLocation.setLongitude(longitude);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+				float distance = tempLocation.distanceTo(location);
+				Log.i("DISTANCE", String.valueOf(distance));
+				
+			}
+			
 		}
 
 		@Override
@@ -260,6 +329,8 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 	}
+
+	
 	
 	
 }

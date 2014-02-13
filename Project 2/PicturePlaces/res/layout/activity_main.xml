@@ -8,15 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/camButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
-        android:text="@string/camera" />
-
     <ImageView
         android:id="@+id/lastPic"
         android:layout_width="wrap_content"
@@ -31,5 +22,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:text="@string/gallery" />
+
+    <Button
+        android:id="@+id/camButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lastPic"
+        android:layout_centerHorizontal="true"
+        android:text="@string/camera" />
+
+    <ListView
+        android:id="@+id/locatList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/galleryButton"
+        android:layout_marginTop="42dp" >
+    </ListView>
     
 </RelativeLayout>

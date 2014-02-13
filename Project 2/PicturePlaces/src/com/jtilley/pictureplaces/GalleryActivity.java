@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
@@ -14,11 +15,16 @@ import android.widget.GridView;
 
 public class GalleryActivity extends Activity {
 GridView galleryView;
+String locationString;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gallery);
+		
+		Intent intent = this.getIntent();
+		locationString = intent.getStringExtra("LOCATION");
+		Log.i("LOCATION", locationString);
 		
 		ArrayList<Bitmap> images = new ArrayList<Bitmap>();
 		
@@ -26,11 +32,23 @@ GridView galleryView;
 		
 		File imageList[] = file.listFiles();
 		
-		for(int i=0; i< imageList.length; i++){
-			Log.i("IMAGE", imageList[i].getAbsolutePath());
-			Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
-			images.add(imageB);
+		if(locationString == "all"){
+			for(int i=0; i< imageList.length; i++){
+				Log.i("IMAGE", imageList[i].getAbsolutePath());
+				Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
+				images.add(imageB);
+				
+			}
+		}else{
+			for(int i=0; i< imageList.length; i++){
+				Log.i("IMAGE", imageList[i].getAbsolutePath());
+				if(imageList[i].getAbsolutePath().contains(locationString)){
+					Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
+					images.add(imageB);
+				}
+			}
 		}
+		
 		
 		galleryView = (GridView) findViewById(R.id.galleryView);
 		galleryView.setAdapter(new ImageAdapter(this, images));
