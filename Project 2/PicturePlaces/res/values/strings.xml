@@ -8,5 +8,7 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="local">Enter Location</string>
+    <string name="title_activity_gallery">GalleryActivity</string>
+    <string name="gallery">Gallery</string>
 
 </resources>

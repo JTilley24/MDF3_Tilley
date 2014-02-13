@@ -22,5 +22,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:contentDescription="@string/content"/>
+
+    <Button
+        android:id="@+id/galleryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/camButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/gallery" />
     
 </RelativeLayout>

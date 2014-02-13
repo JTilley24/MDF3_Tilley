@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Calendar;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -36,7 +40,10 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 Context mContext;
 Button camButton;
+Button galleryButton;
 ImageView lastPic;
+JSONArray locArray;
+LocStorage storage;
 
 private static final int CAMERA_REQUEST = 1888;
 	@Override
@@ -45,7 +52,21 @@ private static final int CAMERA_REQUEST = 1888;
 		setContentView(R.layout.activity_main);
 		mContext = this;
 		
+		storage = LocStorage.getInstance();
+		String locJSON = storage.readStringFile(mContext, "location_json");
+		if(locJSON != ""){
+			try {
+				locArray = new JSONArray(locJSON);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			locArray = new JSONArray();
+		}
+		
 		camButton = (Button) findViewById(R.id.camButton);
+		galleryButton = (Button) findViewById(R.id.galleryButton);
 		
 		camButton.setOnClickListener(new OnClickListener() {
 			
@@ -54,6 +75,16 @@ private static final int CAMERA_REQUEST = 1888;
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 				startActivityForResult(intent, CAMERA_REQUEST);
+			}
+		});
+		
+		galleryButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent gallery = new Intent(mContext, GalleryActivity.class);
+				startActivity(gallery);	
 			}
 		});
 	}
@@ -78,7 +109,7 @@ private static final int CAMERA_REQUEST = 1888;
 			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
 			fos.flush();
 			fos.close();
-			exifAttr(filename, file);
+			exifAttr(filename, file, locName);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -89,7 +120,7 @@ private static final int CAMERA_REQUEST = 1888;
 		
 	}
 	
-	public void exifAttr(String filename, File file){
+	public void exifAttr(String filename, File file, String locName){
 		LocationManager lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		Criteria criteria = new Criteria();
 		String provider = lManager.getBestProvider(criteria, false);
@@ -98,13 +129,12 @@ private static final int CAMERA_REQUEST = 1888;
 		
 		Location location = lManager.getLastKnownLocation(provider);
 		if(location != null){
-			Log.i("LONG", String.valueOf(location.getLongitude()));
-			Log.i("LAT", String.valueOf(location.getLatitude()));
+			String longitude =  String.valueOf(location.getLongitude());
+			
+			String latitude =  String.valueOf(location.getLatitude());
 			
 			ExifInterface exif;
-			
-			
-			
+
 			try {
 				exif = new ExifInterface(file.getAbsolutePath());
 				exif.setAttribute(ExifInterface.TAG_GPS_LATITUDE, String.valueOf(location.getLatitude()));
@@ -115,9 +145,26 @@ private static final int CAMERA_REQUEST = 1888;
 				e.printStackTrace();
 			}
 			
+			saveLocation(locName, longitude, latitude);
 			
 		}
-		
+	}
+	
+	public void saveLocation(String locName, String longitude, String latitude){
+		JSONObject locObject = new JSONObject();
+		try {
+			locObject.put("name", locName);
+			locObject.put("longitude", longitude);
+			locObject.put("latitude", latitude);
+			if(!locArray.toString().contains(locName)){
+				locArray.put(locObject);
+				Log.i("LOCATIONS", locArray.toString());
+				storage.writeStringFile(mContext, "location_json", locArray.toString());
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
