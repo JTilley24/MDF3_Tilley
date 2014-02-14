@@ -1,5 +1,16 @@
 package com.jtilley.pictureplaces;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	PicturePlaces
+ * 
+ * 	Package:	com.jtilley.pictureplaces
+ * 
+ * 	File: 		LocStorage.java
+ * 	
+ * 	Purpose:	This class is used to save Locations to a file and get saved locations from file. It takes
+ * 				the JSONArray as a string and saves it.
+*/
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

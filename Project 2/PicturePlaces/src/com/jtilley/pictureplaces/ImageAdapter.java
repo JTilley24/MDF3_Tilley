@@ -1,5 +1,16 @@
 package com.jtilley.pictureplaces;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	PicturePlaces
+ * 
+ * 	Package:	com.jtilley.pictureplaces
+ * 
+ * 	File: 		ImageAdapter.java
+ * 	
+ * 	Purpose:	This Custom BaseAdapter is used for the GridView in GalleryActivity. It adds the bitmap to an
+ *  			ImageView and sizes it.
+*/
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -42,9 +53,10 @@ public class ImageAdapter extends BaseAdapter{
 		// TODO Auto-generated method stub
 		ImageView imageView = null;
 		
+		//Size image and set it to ImageView
 		if(convertView == null){
 			imageView = new ImageView(mContext);
-			imageView.setLayoutParams(new GridView.LayoutParams(85,85));
+			imageView.setLayoutParams(new GridView.LayoutParams(200,200));
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 			imageView.setPadding(8, 8, 8, 8);
 		}else{

@@ -1,5 +1,16 @@
 package com.jtilley.pictureplaces;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	PicturePlaces
+ * 
+ * 	Package:	com.jtilley.pictureplaces
+ * 
+ * 	File: 		MainActivity.java
+ * 	
+ * 	Purpose:	This Activity displays a button to open the camera and a button to view a gallery of saved images.
+ * 				A ListView is also used to display previous location pictures were taken.
+*/
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,7 +40,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -41,8 +51,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -50,7 +60,8 @@ Context mContext;
 Button camButton;
 Button galleryButton;
 ListView locList;
-ImageView lastPic;
+TextView listHeader;
+Bitmap lastPic;
 JSONArray locArray;
 LocStorage storage;
 private LocationManager lManager;
@@ -62,17 +73,29 @@ private static final int CAMERA_REQUEST = 1888;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		mContext = this;
 		
 		locList = (ListView) findViewById(R.id.locatList);
 		camButton = (Button) findViewById(R.id.camButton);
 		galleryButton = (Button) findViewById(R.id.galleryButton);
+		listHeader = (TextView) findViewById(R.id.listHeader);
 		
+		//Gather Data and Display it in the ListView
 		displayLocations();
 		
+		//Check for previous locations and display it the user if none
+		if(locArray.length() > 0){
+			listHeader.setText("Previous Locations");
+		}else{
+			listHeader.setText("No Saved Images");
+		}
+		
+		//Check for Battery Status and Stop Location Services if Battery is low
 		if(!checkBattery()){
 			Toast.makeText(mContext, "Battery Low!", Toast.LENGTH_LONG).show();
 		}else{
+			//Get Location and Check for Closest Previous Location
 			lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 			Criteria criteria = new Criteria();
 			criteria.setAccuracy(Criteria.ACCURACY_FINE);
@@ -85,6 +108,7 @@ private static final int CAMERA_REQUEST = 1888;
 			}
 		}
 		
+		//Open Gallery to display images at Selected Location
 		locList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -97,6 +121,7 @@ private static final int CAMERA_REQUEST = 1888;
 			}
 		});
 		
+		//Check if able and Open the Camera
 		camButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -114,6 +139,7 @@ private static final int CAMERA_REQUEST = 1888;
 			}
 		});
 		
+		//Open Gallery to display all Previous Images
 		galleryButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -133,6 +159,7 @@ private static final int CAMERA_REQUEST = 1888;
 		displayLocations();
 	}
 	
+	//Save Image to External Storage
 	public void saveImage(String locName){
 		File path = Environment.getExternalStoragePublicDirectory("/PicPlaces/");
 		if(!path.exists()){
@@ -148,7 +175,7 @@ private static final int CAMERA_REQUEST = 1888;
 		File file = new File(path, filename);
 		try {
 			OutputStream fos = new FileOutputStream(file);
-			Bitmap bitmap = ((BitmapDrawable)lastPic.getDrawable()).getBitmap();
+			Bitmap bitmap = lastPic;
 			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
 			fos.flush();
 			fos.close();
@@ -163,6 +190,7 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	//Check for Location
 	public Boolean gpsConnected(Location location){
 		if(location != null){
 			return true;
@@ -170,6 +198,7 @@ private static final int CAMERA_REQUEST = 1888;
 		return false;
 	}
 	
+	//GeoTag Saved Image
 	public void exifAttr(String filename, File file, String locName){
 		
 		Location location = lManager.getLastKnownLocation(provider);
@@ -194,6 +223,7 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	//Save Location
 	public void saveLocation(String locName, String longitude, String latitude){
 		JSONObject locObject = new JSONObject();
 		try {
@@ -211,9 +241,11 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	//Display Saved Locations in ListView
 	public void displayLocations(){
 		storage = LocStorage.getInstance();
 		String locJSON = storage.readStringFile(mContext, "location_json");
+		
 		if(locJSON != ""){
 			try {
 				locArray = new JSONArray(locJSON);
@@ -241,18 +273,18 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	//Get Image after taken by Camera
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 		if(resultCode == RESULT_OK){
 			if(requestCode == CAMERA_REQUEST){
-				lastPic = (ImageView) findViewById(R.id.lastPic);
-				Bitmap photo = (Bitmap) data.getExtras().get("data");
-				lastPic.setImageBitmap(photo);
+				lastPic = (Bitmap) data.getExtras().get("data");
 				DialogFragment dialog = new PicDialog();
 				dialog.show(getFragmentManager(), "dialog");
 			}
 		}
 	}
 	
+	//Find Closest Previous Location to Current Location
 	public void closestLocation(Location location){
 		if(locArray != null){
 			Double[] distanceList = new Double[locArray.length()];
@@ -293,6 +325,7 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	//Check for Battery Status
 	public Boolean checkBattery(){
 		IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 		Intent battery = this.registerReceiver(null, filter);
@@ -317,8 +350,7 @@ private static final int CAMERA_REQUEST = 1888;
 		return true;
 	}
 	
-	
-	
+	//Display Dialog for user's input of location
 	public static class PicDialog extends DialogFragment{
 		EditText locText;
 		Button okButton;
@@ -366,7 +398,8 @@ private static final int CAMERA_REQUEST = 1888;
 			return view;
 		}
 	}
-		
+	
+	//Location Changes
 	private final class MyLocationListener implements LocationListener{
 
 		@Override
