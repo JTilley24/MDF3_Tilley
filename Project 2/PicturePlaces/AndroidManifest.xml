@@ -37,6 +37,11 @@
             android:name="com.jtilley.pictureplaces.GalleryActivity"
             android:label="@string/title_activity_gallery" >
         </activity>
+        <activity
+            android:name="com.jtilley.pictureplaces.ImageActivity"
+            android:label="@string/title_activity_image" >
+        </activity>
+        
     </application>
 
 </manifest>

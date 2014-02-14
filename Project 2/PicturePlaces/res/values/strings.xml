@@ -10,5 +10,7 @@
     <string name="local">Enter Location</string>
     <string name="title_activity_gallery">GalleryActivity</string>
     <string name="gallery">Gallery</string>
+    <string name="title_activity_image">ImageActivity</string>
+    <string name="delete">Delete</string>
 
 </resources>

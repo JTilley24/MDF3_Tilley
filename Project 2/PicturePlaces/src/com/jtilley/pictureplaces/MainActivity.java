@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 
 import org.json.JSONArray;
@@ -18,6 +19,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.ExifInterface;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -25,6 +27,7 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
@@ -52,6 +55,7 @@ JSONArray locArray;
 LocStorage storage;
 private LocationManager lManager;
 private String provider;
+Location location;
 
 private static final int CAMERA_REQUEST = 1888;
 	@Override
@@ -60,22 +64,27 @@ private static final int CAMERA_REQUEST = 1888;
 		setContentView(R.layout.activity_main);
 		mContext = this;
 		
-		storage = LocStorage.getInstance();
-		String locJSON = storage.readStringFile(mContext, "location_json");
-		if(locJSON != ""){
-			try {
-				locArray = new JSONArray(locJSON);
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		locList = (ListView) findViewById(R.id.locatList);
+		camButton = (Button) findViewById(R.id.camButton);
+		galleryButton = (Button) findViewById(R.id.galleryButton);
+		
+		displayLocations();
+		
+		if(!checkBattery()){
+			Toast.makeText(mContext, "Battery Low!", Toast.LENGTH_LONG).show();
 		}else{
-			locArray = new JSONArray();
+			lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+			Criteria criteria = new Criteria();
+			criteria.setAccuracy(Criteria.ACCURACY_FINE);
+			provider = lManager.getBestProvider(criteria, false);
+			
+			lManager.requestLocationUpdates(provider, 0, 1, new MyLocationListener());
+			location = lManager.getLastKnownLocation(provider);
+			if(gpsConnected(location)){
+				closestLocation(location);
+			}
 		}
 		
-		locList = (ListView) findViewById(R.id.locatList);
-		
-		displayLocations(locArray);
 		locList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -88,16 +97,20 @@ private static final int CAMERA_REQUEST = 1888;
 			}
 		});
 		
-		camButton = (Button) findViewById(R.id.camButton);
-		galleryButton = (Button) findViewById(R.id.galleryButton);
-		
 		camButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				startActivityForResult(intent, CAMERA_REQUEST);
+					if(!(checkBattery())){
+						Toast.makeText(mContext, "Battery Low and Camera is Disabled!", Toast.LENGTH_LONG).show();
+					}else if(gpsConnected(location)){
+						Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+						startActivityForResult(intent, CAMERA_REQUEST);
+					}else{
+						Toast.makeText(mContext, "Please Enable GPS!", Toast.LENGTH_LONG).show();
+					}
+				
 			}
 		});
 		
@@ -111,17 +124,16 @@ private static final int CAMERA_REQUEST = 1888;
 				startActivity(gallery);	
 			}
 		});
-		
-		lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		Criteria criteria = new Criteria();
-		criteria.setAccuracy(Criteria.ACCURACY_FINE);
-		provider = lManager.getBestProvider(criteria, false);
-		
-		lManager.requestLocationUpdates(provider, 0, 1, new MyLocationListener());
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		displayLocations();
+	}
+	
 	public void saveImage(String locName){
-		Toast.makeText(mContext, "Image Saved", Toast.LENGTH_LONG).show();
 		File path = Environment.getExternalStoragePublicDirectory("/PicPlaces/");
 		if(!path.exists()){
 			path.mkdir();
@@ -130,8 +142,8 @@ private static final int CAMERA_REQUEST = 1888;
 		Log.i("TIME", day);
 		
 		String filename = locName + "_" + day + ".jpg";
-		
-		
+	
+		Toast.makeText(mContext, "Image Saved: " + filename, Toast.LENGTH_LONG).show();
 		
 		File file = new File(path, filename);
 		try {
@@ -141,6 +153,7 @@ private static final int CAMERA_REQUEST = 1888;
 			fos.flush();
 			fos.close();
 			exifAttr(filename, file, locName);
+			displayLocations();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -148,7 +161,13 @@ private static final int CAMERA_REQUEST = 1888;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	}
+	
+	public Boolean gpsConnected(Location location){
+		if(location != null){
+			return true;
+		}
+		return false;
 	}
 	
 	public void exifAttr(String filename, File file, String locName){
@@ -172,7 +191,6 @@ private static final int CAMERA_REQUEST = 1888;
 			}
 			
 			saveLocation(locName, longitude, latitude);
-			
 		}
 	}
 	
@@ -193,7 +211,20 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
-	public void displayLocations(JSONArray locArray){
+	public void displayLocations(){
+		storage = LocStorage.getInstance();
+		String locJSON = storage.readStringFile(mContext, "location_json");
+		if(locJSON != ""){
+			try {
+				locArray = new JSONArray(locJSON);
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			locArray = new JSONArray();
+		}
+		
 		ArrayList<String> locStrings = new ArrayList<String>();
 		for(int i=0; i< locArray.length(); i++){
 			try {
@@ -208,7 +239,6 @@ private static final int CAMERA_REQUEST = 1888;
 				e.printStackTrace();
 			}
 		}
-	
 	}
 	
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -223,11 +253,61 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-		lManager.requestLocationUpdates(provider, 400, 1, new MyLocationListener());
+	public void closestLocation(Location location){
+		if(locArray != null){
+			Double[] distanceList = new Double[locArray.length()];
+			for(int i=0;i < locArray.length();i++){
+				Location tempLocation = new Location("");
+				try {
+					int latitude = (int) locArray.getJSONObject(i).getInt("latitude");
+					int longitude = (int) locArray.getJSONObject(i).getInt("longitude");
+					tempLocation.setLatitude(latitude);
+					tempLocation.setLongitude(longitude);
+					double distance = tempLocation.distanceTo(location);
+					locArray.getJSONObject(i).put("distance", distance);
+					distanceList[i] = distance;
+					Log.i("DISTANCE", locArray.getJSONObject(i).get("distance").toString());
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			Arrays.sort(distanceList);
+			StringBuilder closest = new StringBuilder();
+			for(int i=0;i < locArray.length();i++){
+				try {
+					
+					if(distanceList[0].toString().equals(locArray.getJSONObject(i).get("distance").toString())){
+						closest.append(locArray.getJSONObject(i).get("name") + " ");
+					}
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			Log.i("CLOSEST", closest.toString());
+			if(closest.toString() != ""){
+				Toast.makeText(mContext, "Current Location is close to " + closest.toString(), Toast.LENGTH_LONG).show();
+			}
+		}
+	}
+	
+	public Boolean checkBattery(){
+		IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+		Intent battery = this.registerReceiver(null, filter);
+		int bLevel = battery.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+		int bScale = battery.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+		
+		if((bLevel > 0) && (bScale > 0)){
+			int bPercent = (bLevel * 100)/bScale;
+			if(bPercent < 30){
+				Toast.makeText(mContext, "Battery low!", Toast.LENGTH_LONG).show();
+				return false;
+			}
+		}
+		
+		return true;
 	}
 	
 	@Override
@@ -236,7 +316,9 @@ private static final int CAMERA_REQUEST = 1888;
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
+	
+	
 	public static class PicDialog extends DialogFragment{
 		EditText locText;
 		Button okButton;
@@ -254,12 +336,15 @@ private static final int CAMERA_REQUEST = 1888;
 					okButton = (Button) view.findViewById(R.id.okButton);
 					cancelButton = (Button) view.findViewById(R.id.cancelButton);
 					
+					getDialog().setTitle("Save Image");
+					
 					okButton.setOnClickListener(new OnClickListener() {
 						
 						@Override
 						public void onClick(View arg0) {
 							// TODO Auto-generated method stub
 							String locString = locText.getText().toString();
+							//locString.replaceAll(" ", ".");
 							if(locString.length() > 0){
 								((MainActivity)getActivity()).saveImage(locString);
 								dismiss();
@@ -277,10 +362,8 @@ private static final int CAMERA_REQUEST = 1888;
 							dismiss();
 						}
 					});
-					
-					
+
 			return view;
-			
 		}
 	}
 		
@@ -289,25 +372,9 @@ private static final int CAMERA_REQUEST = 1888;
 		@Override
 		public void onLocationChanged(Location location) {
 			// TODO Auto-generated method stub
-			
-			
-			for(int i=0;i < locArray.length();i++){
-				Location tempLocation = new Location("");
-				try {
-					int latitude = (int) locArray.getJSONObject(i).getInt("latitude");
-					int longitude = (int) locArray.getJSONObject(i).getInt("longitude");
-					tempLocation.setLatitude(latitude);
-					tempLocation.setLongitude(longitude);
-				} catch (JSONException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
-				float distance = tempLocation.distanceTo(location);
-				Log.i("DISTANCE", String.valueOf(distance));
-				
+			if(location != null){
+				closestLocation(location);
 			}
-			
 		}
 
 		@Override
@@ -329,6 +396,9 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 	}
+
+	
+	
 
 	
 	
