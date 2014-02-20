@@ -88,5 +88,11 @@ TextView listHeader;
 			locList.setFilterText(query);
 		}
 	}
-	
+
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
 }

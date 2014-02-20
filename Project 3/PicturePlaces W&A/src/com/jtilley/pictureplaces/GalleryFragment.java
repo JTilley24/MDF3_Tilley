@@ -1,8 +1,10 @@
 package com.jtilley.pictureplaces;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +17,13 @@ import android.widget.AdapterView.OnItemClickListener;
 public class GalleryFragment extends Fragment{
 GridView galleryView;
 TextView headerText;
+ArrayList<Bitmap> images;
 int index;
 
 	public interface OnImageSelected{
-		
+		ArrayList<Bitmap> displayGalleryImg();
+		void displayImages();
+		void openImageActivity(int position);
 	}
 	
 	private OnImageSelected parentActivity;
@@ -43,8 +48,10 @@ int index;
 		
 		headerText = (TextView) view.findViewById(R.id.headerText);
 		
+		ArrayList<Bitmap> images = parentActivity.displayGalleryImg();
+		
 		galleryView = (GridView) view.findViewById(R.id.galleryView);
-		//galleryView.setAdapter(new ImageAdapter(this, images));
+		galleryView.setAdapter(new ImageAdapter(getActivity(), images));
 		galleryView.setOnItemClickListener(new OnItemClickListener() {
 			
 			//Open ImageActivity to display larger image
@@ -52,6 +59,8 @@ int index;
 			public void onItemClick(AdapterView<?> imageList, View view, int position,
 					long id) {
 				// TODO Auto-generated method stub
+				
+				parentActivity.openImageActivity(position);
 				/*Intent image = new Intent(mContext, ImageActivity.class);
 				image.putExtra("bitmap", images.get(position));
 				image.putExtra("file_path", filesArray.get(position));
@@ -62,12 +71,27 @@ int index;
 		return view;
 	}
 
+	public void displayImages(){
+		images = parentActivity.displayGalleryImg();
+		galleryView.setAdapter(new ImageAdapter(getActivity(), images));
+	}
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 	}
 
+	@Override
+	public void onHiddenChanged(boolean hidden) {
+		// TODO Auto-generated method stub
+		if(hidden == true){
+			
+		}else{
+			displayImages();
+		}
+		super.onHiddenChanged(hidden);
+	}
 	
 
 }

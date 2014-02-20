@@ -40,12 +40,13 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.ActionBar.Tab;
 import android.app.DialogFragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.SearchView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -71,7 +72,10 @@ Location location;
 SearchView searchField;
 MenuItem settings;
 MainActivityFragment fragment1;
-
+GalleryFragment fragment2;
+SharedPreferences prefs;
+ArrayList<String>filesArray;
+ArrayList<Bitmap> images;
 
 private static final int CAMERA_REQUEST = 1888;
 	@Override
@@ -81,7 +85,10 @@ private static final int CAMERA_REQUEST = 1888;
 		
 		mContext = this;
 		
-	
+		prefs = getSharedPreferences("user_prefs", 0);
+		SharedPreferences.Editor editPrefs = prefs.edit();
+		editPrefs.putString("location", "all");
+		editPrefs.commit();
 		
 		ActionBar aBar = getActionBar();
 		aBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -103,6 +110,7 @@ private static final int CAMERA_REQUEST = 1888;
 		super.onResume();
 		
 		fragment1 = (MainActivityFragment) getFragmentManager().findFragmentByTag("home");
+		fragment2 = (GalleryFragment) getFragmentManager().findFragmentByTag("gallery");
 		displayLocations();
 		
 		if(!checkBattery()){
@@ -123,15 +131,60 @@ private static final int CAMERA_REQUEST = 1888;
 	}
 
 	public void openGallery(String position){
-		if(position != null){
-			Intent gallery = new Intent(mContext, GalleryActivity.class);
-			gallery.putExtra("LOCATION", position);
-			startActivity(gallery);	
-		}else{
-			Intent gallery = new Intent(mContext, GalleryActivity.class);
-			gallery.putExtra("LOCATION", "all");
-			startActivity(gallery);	
-		}
+		
+		getActionBar().setSelectedNavigationItem(1);
+		SharedPreferences.Editor editPrefs = prefs.edit();
+		editPrefs.putString("location", position);
+		editPrefs.commit();
+		GalleryFragment fragment2 = (GalleryFragment) getFragmentManager().findFragmentByTag("gallery");
+		fragment2.displayImages();
+		
+	}
+	
+	@Override
+	public void openImageActivity(int position) {
+		// TODO Auto-generated method stub
+		Intent image = new Intent(mContext, ImageActivity.class);
+		image.putExtra("bitmap", images.get(position));
+		image.putExtra("file_path", filesArray.get(position));
+		startActivity(image);
+	}
+	
+	@Override
+	public ArrayList<Bitmap> displayGalleryImg() {
+		// TODO Auto-generated method stub
+			filesArray = new ArrayList<String>();
+			images = new ArrayList<Bitmap>();
+			
+			SharedPreferences prefs = getSharedPreferences("user_prefs", 0);
+			
+			String locationString = prefs.getString("location", null);
+			
+			//Get List of Files in Directory
+			File file = new File(Environment.getExternalStorageDirectory() + "/PicPlaces/");
+			
+			File imageList[] = file.listFiles();
+			//Check for selection from MainActivity and Add images
+			if(locationString.equalsIgnoreCase("all")){
+				//headerText.setText("All Images");
+				for(int i=0; i< imageList.length; i++){
+					Log.i("IMAGE", imageList[i].getAbsolutePath());
+					Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
+					images.add(imageB);
+					filesArray.add(imageList[i].getAbsolutePath());	
+				}
+			}else{
+				//headerText.setText(locationString);
+				for(int i=0; i< imageList.length; i++){
+					Log.i("IMAGE", imageList[i].getAbsolutePath());
+					if(imageList[i].getAbsolutePath().contains(locationString)){
+						Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
+						images.add(imageB);
+						filesArray.add(imageList[i].getAbsolutePath());
+					}
+				}
+			}
+			return images;
 	}
 	
 	
@@ -464,10 +517,21 @@ private static final int CAMERA_REQUEST = 1888;
 		private final String mTag;
 		private final Class<T> mClass;
 		
+		
+		
 		public TabListener(Activity activity, String tag, Class<T> clas){
 			mActivity = activity;
 			mTag = tag;
 			mClass = clas;
+			FragmentTransaction ft = mActivity.getFragmentManager().beginTransaction();
+			mFragment = Fragment.instantiate(mActivity, mClass.getName());
+			ft.add(android.R.id.content, mFragment, mTag);
+			if(tag.equalsIgnoreCase("home")){
+				ft.show(mFragment);
+			}else{
+				ft.hide(mFragment);
+			}
+			ft.commit();
 		}
 		
 		@Override
@@ -479,20 +543,27 @@ private static final int CAMERA_REQUEST = 1888;
 		@Override
 		public void onTabSelected(Tab tab, FragmentTransaction ft) {
 			// TODO Auto-generated method stub
+			
 			if(mFragment == null){
 				mFragment = Fragment.instantiate(mActivity, mClass.getName());
 				ft.add(android.R.id.content, mFragment, mTag);
+				ft.show(mFragment);
 			}else{
-				ft.attach(mFragment);
+				ft.show(mFragment);
 			}
+			
 		}
 
 		@Override
 		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 			// TODO Auto-generated method stub
 			if(mFragment != null){
-				ft.detach(mFragment);
+				ft.hide(mFragment);
 			}
+			SharedPreferences prefs = mActivity.getSharedPreferences("user_prefs", 0);
+			SharedPreferences.Editor editPrefs = prefs.edit();
+			editPrefs.putString("location", "all");
+			editPrefs.commit();
 		}
 
 	}
@@ -507,6 +578,16 @@ private static final int CAMERA_REQUEST = 1888;
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void displayImages() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	
 
 
 	
