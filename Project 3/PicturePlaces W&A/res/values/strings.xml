@@ -12,5 +12,8 @@
     <string name="gallery">Gallery</string>
     <string name="title_activity_image">ImageActivity</string>
     <string name="delete">Delete</string>
+    <string name="action_search">Search</string>
+    <string name="action_camera">Camera</string>
+    <string name="hint">Search</string>
 
 </resources>

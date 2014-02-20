@@ -2,7 +2,7 @@ package com.jtilley.pictureplaces;
 /*
  * 	Author: 	Justin Tilley
  * 
- * 	Project:	PicturePlaces
+ * 	Project:	PicturePlaces Widget and ActionBar
  * 
  * 	Package:	com.jtilley.pictureplaces
  * 

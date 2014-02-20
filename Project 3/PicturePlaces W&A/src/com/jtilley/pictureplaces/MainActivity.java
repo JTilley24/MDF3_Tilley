@@ -2,7 +2,7 @@ package com.jtilley.pictureplaces;
 /*
  * 	Author: 	Justin Tilley
  * 
- * 	Project:	PicturePlaces
+ * 	Project:	PicturePlaces Widget and ActionBar
  * 
  * 	Package:	com.jtilley.pictureplaces
  * 
@@ -11,6 +11,7 @@ package com.jtilley.pictureplaces;
  * 	Purpose:	This Activity displays a button to open the camera and a button to view a gallery of saved images.
  * 				A ListView is also used to display previous location pictures were taken.
 */
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,9 +41,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.widget.SearchView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
@@ -52,10 +56,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView.OnQueryTextListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnQueryTextListener {
 Context mContext;
 Button camButton;
 Button galleryButton;
@@ -67,6 +72,7 @@ LocStorage storage;
 private LocationManager lManager;
 private String provider;
 Location location;
+SearchView searchField;
 
 private static final int CAMERA_REQUEST = 1888;
 	@Override
@@ -77,9 +83,12 @@ private static final int CAMERA_REQUEST = 1888;
 		mContext = this;
 		
 		locList = (ListView) findViewById(R.id.locatList);
+		locList.setTextFilterEnabled(true);
 		camButton = (Button) findViewById(R.id.camButton);
 		galleryButton = (Button) findViewById(R.id.galleryButton);
 		listHeader = (TextView) findViewById(R.id.listHeader);
+		
+		//handleIntent(getIntent());
 		
 		//Gather Data and Display it in the ListView
 		displayLocations();
@@ -128,6 +137,7 @@ private static final int CAMERA_REQUEST = 1888;
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				displayLocations();	
+				Location location = lManager.getLastKnownLocation(provider);
 				if(!(checkBattery())){
 						Toast.makeText(mContext, "Battery Low and Camera is Disabled!", Toast.LENGTH_LONG).show();
 					}else if(gpsConnected(location)){
@@ -159,7 +169,7 @@ private static final int CAMERA_REQUEST = 1888;
 		super.onResume();
 		displayLocations();
 	}
-	
+
 	//Save Image to External Storage
 	public void saveImage(String locName){
 		File path = Environment.getExternalStoragePublicDirectory("/PicPlaces/");
@@ -347,10 +357,58 @@ private static final int CAMERA_REQUEST = 1888;
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.main_action, menu);
+		searchField = (SearchView) menu.findItem(R.id.action_search).getActionView();
+		setupSearchView(searchField);
+		return true;
+	}
+
+	
+	public void openCamera(){
+		displayLocations();	
+		Location location = lManager.getLastKnownLocation(provider);
+		if(!(checkBattery())){
+				Toast.makeText(mContext, "Battery Low and Camera is Disabled!", Toast.LENGTH_LONG).show();
+			}else if(gpsConnected(location)){
+				Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				startActivityForResult(intent, CAMERA_REQUEST);
+			}else{
+				Toast.makeText(mContext, "Please Enable GPS!", Toast.LENGTH_LONG).show();
+			}
+		
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		if(item.getItemId() == findViewById(R.id.action_camera).getId()){
+			openCamera();
+		}
+		
+		return super.onOptionsItemSelected(item);
+	}
+	
+	private void setupSearchView(SearchView search){
+		search.setIconifiedByDefault(false);
+		search.setSubmitButtonEnabled(false);
+		search.setOnQueryTextListener(this);
+	}
+	@Override
+	public boolean onQueryTextChange(String query){
+		if(TextUtils.isEmpty(query)){
+			locList.clearTextFilter();
+		}else{
+			locList.setFilterText(query);
+		}
 		return true;
 	}
 	
+	@Override
+	public boolean onQueryTextSubmit(String arg0) {
+		// TODO Auto-generated method stub
+		searchField.clearFocus();
+		return false;
+	}
 	//Display Dialog for user's input of location
 	public static class PicDialog extends DialogFragment{
 		EditText locText;
@@ -431,6 +489,9 @@ private static final int CAMERA_REQUEST = 1888;
 		
 	}
 
+	
+
+	
 	
 	
 
