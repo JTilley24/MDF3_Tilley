@@ -15,5 +15,11 @@
     <string name="action_search">Search</string>
     <string name="action_camera">Camera</string>
     <string name="hint">Search</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="settings_header">Settings</string>
+    <string name="camera_option">Camera</string>
+    <string name="front_camera">Front Camera</string>
+    <string name="back_camera">Back Camera</string>
+    <string name="gps_settings">GPS Settings</string>
 
 </resources>

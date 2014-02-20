@@ -128,6 +128,7 @@ private static final int CAMERA_REQUEST = 1888;
 				closestLocation(location);
 			}
 		}
+		
 	}
 
 	public void openGallery(String position){
@@ -391,8 +392,18 @@ private static final int CAMERA_REQUEST = 1888;
 		if(!(checkBattery())){
 				Toast.makeText(mContext, "Battery Low and Camera is Disabled!", Toast.LENGTH_LONG).show();
 			}else if(gpsConnected(location)){
-				Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-				startActivityForResult(intent, CAMERA_REQUEST);
+				String cameraString = prefs.getString("CAMERA", null);
+				if(cameraString.equalsIgnoreCase("front")){
+					Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+					intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
+					Log.i("CAMERA", "FRONT");
+					startActivityForResult(intent, CAMERA_REQUEST);
+				}else{
+					Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+					startActivityForResult(intent, CAMERA_REQUEST);
+					Log.i("CAMERA", "BACK");
+				}
+				
 			}else{
 				Toast.makeText(mContext, "Please Enable GPS!", Toast.LENGTH_LONG).show();
 			}
@@ -406,6 +417,8 @@ private static final int CAMERA_REQUEST = 1888;
 			openCamera();
 		}else if(item.getItemId() == settings.getItemId()){
 			Log.i("SETTINGS", "Selected Settings");
+			Intent setting = new Intent(mContext, SettingsActivity.class);
+			startActivity(setting);
 		}
 		
 		return super.onOptionsItemSelected(item);
