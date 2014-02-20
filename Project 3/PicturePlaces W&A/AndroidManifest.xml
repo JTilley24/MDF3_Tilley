@@ -48,6 +48,22 @@
             android:name="com.jtilley.pictureplaces.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name="com.jtilley.pictureplaces.WidgetConfig"
+            android:label="@string/title_activity_widget_config" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name="PicWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/picture_widget" />
+        </receiver>
     </application>
 
 </manifest>

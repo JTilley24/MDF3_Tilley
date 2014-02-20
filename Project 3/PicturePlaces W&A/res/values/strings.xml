@@ -21,5 +21,7 @@
     <string name="front_camera">Front Camera</string>
     <string name="back_camera">Back Camera</string>
     <string name="gps_settings">GPS Settings</string>
+    <string name="title_activity_widget_config">WidgetConfig</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
