@@ -5,16 +5,18 @@
 	    android:icon="@drawable/ic_action_search"
 	    android:title="@string/action_search"
 	    android:showAsAction="collapseActionView|ifRoom"
+	    android:orderInCategory="1"
 	    android:actionViewClass="android.widget.SearchView" />
 	
 	<item android:id="@+id/action_camera"
 	    android:icon="@drawable/ic_action_camera" 
 	    android:title="@string/action_camera"
+	    android:orderInCategory="2"
 	    android:showAsAction="ifRoom" />  
 	    
 	<item android:id="@+id/action_settings"
-        android:orderInCategory="100"
         android:showAsAction="never"
+        android:orderInCategory="3"
         android:title="@string/action_settings" />  
 
 </menu>

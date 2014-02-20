@@ -35,8 +35,13 @@ import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.ActionBar.Tab;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -50,22 +55,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.SearchView.OnQueryTextListener;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements OnQueryTextListener {
+public class MainActivity extends Activity implements OnQueryTextListener, MainActivityFragment.OnListItemClicked, GalleryFragment.OnImageSelected {
 Context mContext;
-Button camButton;
-Button galleryButton;
-ListView locList;
-TextView listHeader;
 Bitmap lastPic;
 JSONArray locArray;
 LocStorage storage;
@@ -73,34 +69,42 @@ private LocationManager lManager;
 private String provider;
 Location location;
 SearchView searchField;
+MenuItem settings;
+MainActivityFragment fragment1;
+
 
 private static final int CAMERA_REQUEST = 1888;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		//setContentView(R.layout.main_fragment);
 		
 		mContext = this;
 		
-		locList = (ListView) findViewById(R.id.locatList);
-		locList.setTextFilterEnabled(true);
-		camButton = (Button) findViewById(R.id.camButton);
-		galleryButton = (Button) findViewById(R.id.galleryButton);
-		listHeader = (TextView) findViewById(R.id.listHeader);
+	
 		
-		//handleIntent(getIntent());
+		ActionBar aBar = getActionBar();
+		aBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		
-		//Gather Data and Display it in the ListView
+		Tab tab1 = aBar.newTab().setText("Home")
+								.setTabListener(new TabListener<MainActivityFragment>(this, "home", MainActivityFragment.class));
+		
+		Tab tab2 = aBar.newTab().setText("Gallery")
+								.setTabListener(new TabListener<GalleryFragment>(this, "gallery", GalleryFragment.class));
+		
+		aBar.addTab(tab1);
+		aBar.addTab(tab2);
+		
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		
+		fragment1 = (MainActivityFragment) getFragmentManager().findFragmentByTag("home");
 		displayLocations();
 		
-		//Check for previous locations and display it the user if none
-		if(locArray.length() > 0){
-			listHeader.setText("Previous Locations");
-		}else{
-			listHeader.setText("No Saved Images");
-		}
-		
-		//Check for Battery Status and Stop Location Services if Battery is low
 		if(!checkBattery()){
 			Toast.makeText(mContext, "Battery Low!", Toast.LENGTH_LONG).show();
 		}else{
@@ -116,60 +120,21 @@ private static final int CAMERA_REQUEST = 1888;
 				closestLocation(location);
 			}
 		}
-		
-		//Open Gallery to display images at Selected Location
-		locList.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> locListView, View view, int position,
-					long row) {
-				// TODO Auto-generated method stub
-				Intent gallery = new Intent(mContext, GalleryActivity.class);
-				gallery.putExtra("LOCATION", locListView.getItemAtPosition(position).toString());
-				startActivity(gallery);	
-			}
-		});
-		
-		//Check if able and Open the Camera
-		camButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				displayLocations();	
-				Location location = lManager.getLastKnownLocation(provider);
-				if(!(checkBattery())){
-						Toast.makeText(mContext, "Battery Low and Camera is Disabled!", Toast.LENGTH_LONG).show();
-					}else if(gpsConnected(location)){
-						Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-						startActivityForResult(intent, CAMERA_REQUEST);
-					}else{
-						Toast.makeText(mContext, "Please Enable GPS!", Toast.LENGTH_LONG).show();
-					}
-				
-			}
-		});
-		
-		//Open Gallery to display all Previous Images
-		galleryButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent gallery = new Intent(mContext, GalleryActivity.class);
-				gallery.putExtra("LOCATION", "all");
-				startActivity(gallery);	
-			}
-		});
 	}
 
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-		displayLocations();
+	public void openGallery(String position){
+		if(position != null){
+			Intent gallery = new Intent(mContext, GalleryActivity.class);
+			gallery.putExtra("LOCATION", position);
+			startActivity(gallery);	
+		}else{
+			Intent gallery = new Intent(mContext, GalleryActivity.class);
+			gallery.putExtra("LOCATION", "all");
+			startActivity(gallery);	
+		}
 	}
-
+	
+	
 	//Save Image to External Storage
 	public void saveImage(String locName){
 		File path = Environment.getExternalStoragePublicDirectory("/PicPlaces/");
@@ -274,14 +239,16 @@ private static final int CAMERA_REQUEST = 1888;
 				String tempName = locArray.getJSONObject(i).getString("name");
 				Log.i("LOC_NAME", tempName);
 				locStrings.add(tempName);
-				
-				locList.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, locStrings));
-				
+
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		
+		
+		fragment1.displaySaved(locStrings);
+		
 	}
 	
 	//Get Image after taken by Camera
@@ -360,6 +327,7 @@ private static final int CAMERA_REQUEST = 1888;
 		getMenuInflater().inflate(R.menu.main_action, menu);
 		searchField = (SearchView) menu.findItem(R.id.action_search).getActionView();
 		setupSearchView(searchField);
+		settings = (MenuItem) menu.findItem(R.id.action_settings);
 		return true;
 	}
 
@@ -383,6 +351,8 @@ private static final int CAMERA_REQUEST = 1888;
 		// TODO Auto-generated method stub
 		if(item.getItemId() == findViewById(R.id.action_camera).getId()){
 			openCamera();
+		}else if(item.getItemId() == settings.getItemId()){
+			Log.i("SETTINGS", "Selected Settings");
 		}
 		
 		return super.onOptionsItemSelected(item);
@@ -396,9 +366,9 @@ private static final int CAMERA_REQUEST = 1888;
 	@Override
 	public boolean onQueryTextChange(String query){
 		if(TextUtils.isEmpty(query)){
-			locList.clearTextFilter();
+			fragment1.listFilter(query, false);
 		}else{
-			locList.setFilterText(query);
+			fragment1.listFilter(query, true);
 		}
 		return true;
 	}
@@ -488,6 +458,56 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 	}
+	public static class TabListener<T extends Fragment>implements ActionBar.TabListener{
+		private Fragment mFragment;
+		private final Activity mActivity;
+		private final String mTag;
+		private final Class<T> mClass;
+		
+		public TabListener(Activity activity, String tag, Class<T> clas){
+			mActivity = activity;
+			mTag = tag;
+			mClass = clas;
+		}
+		
+		@Override
+		public void onTabReselected(Tab tab, FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onTabSelected(Tab tab, FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+			if(mFragment == null){
+				mFragment = Fragment.instantiate(mActivity, mClass.getName());
+				ft.add(android.R.id.content, mFragment, mTag);
+			}else{
+				ft.attach(mFragment);
+			}
+		}
+
+		@Override
+		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+			if(mFragment != null){
+				ft.detach(mFragment);
+			}
+		}
+
+	}
+	@Override
+	public void displaySaved(ArrayList<String> locStrings) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void listFilter(String query, Boolean filtered) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
 
