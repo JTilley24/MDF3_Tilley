@@ -85,11 +85,13 @@ private static final int CAMERA_REQUEST = 1888;
 		
 		mContext = this;
 		
+		//Set SharedPreference for Location
 		prefs = getSharedPreferences("user_prefs", 0);
 		SharedPreferences.Editor editPrefs = prefs.edit();
 		editPrefs.putString("location", "all");
 		editPrefs.commit();
 		
+		//Setup for ActionBar
 		ActionBar aBar = getActionBar();
 		aBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		
@@ -131,17 +133,17 @@ private static final int CAMERA_REQUEST = 1888;
 		
 	}
 
+	//Open Gallery from ListView
 	public void openGallery(String position){
-		
 		getActionBar().setSelectedNavigationItem(1);
 		SharedPreferences.Editor editPrefs = prefs.edit();
 		editPrefs.putString("location", position);
 		editPrefs.commit();
 		GalleryFragment fragment2 = (GalleryFragment) getFragmentManager().findFragmentByTag("gallery");
-		fragment2.displayImages();
-		
+		fragment2.displayImages();	
 	}
 	
+	//Open ImageActivity from GridView
 	@Override
 	public void openImageActivity(int position) {
 		// TODO Auto-generated method stub
@@ -151,6 +153,7 @@ private static final int CAMERA_REQUEST = 1888;
 		startActivity(image);
 	}
 	
+	//Display Images in GridView
 	@Override
 	public ArrayList<Bitmap> displayGalleryImg() {
 		// TODO Auto-generated method stub
@@ -167,7 +170,6 @@ private static final int CAMERA_REQUEST = 1888;
 			File imageList[] = file.listFiles();
 			//Check for selection from MainActivity and Add images
 			if(locationString.equalsIgnoreCase("all")){
-				//headerText.setText("All Images");
 				for(int i=0; i< imageList.length; i++){
 					Log.i("IMAGE", imageList[i].getAbsolutePath());
 					Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
@@ -175,7 +177,6 @@ private static final int CAMERA_REQUEST = 1888;
 					filesArray.add(imageList[i].getAbsolutePath());	
 				}
 			}else{
-				//headerText.setText(locationString);
 				for(int i=0; i< imageList.length; i++){
 					Log.i("IMAGE", imageList[i].getAbsolutePath());
 					if(imageList[i].getAbsolutePath().contains(locationString)){
@@ -304,9 +305,7 @@ private static final int CAMERA_REQUEST = 1888;
 			}
 		}
 		
-		
 		fragment1.displaySaved(locStrings);
-		
 	}
 	
 	//Get Image after taken by Camera
@@ -393,7 +392,7 @@ private static final int CAMERA_REQUEST = 1888;
 		return true;
 	}
 
-	
+	//Open Camera and Check for Front or Back Camera
 	public void openCamera(){
 		displayLocations();	
 		Location location = lManager.getLastKnownLocation(provider);
@@ -401,15 +400,21 @@ private static final int CAMERA_REQUEST = 1888;
 				Toast.makeText(mContext, "Battery Low and Camera is Disabled!", Toast.LENGTH_LONG).show();
 			}else if(gpsConnected(location)){
 				String cameraString = prefs.getString("CAMERA", null);
-				if(cameraString.equalsIgnoreCase("front")){
-					Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-					intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
-					Log.i("CAMERA", "FRONT");
-					startActivityForResult(intent, CAMERA_REQUEST);
+				if(cameraString != null){
+					if(cameraString.equalsIgnoreCase("front")){
+						Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+						intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
+						Log.i("CAMERA", "FRONT");
+						startActivityForResult(intent, CAMERA_REQUEST);
+					}else{
+						Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+						intent.putExtra("android.intent.extras.CAMERA_FACING", 0);
+						startActivityForResult(intent, CAMERA_REQUEST);
+						Log.i("CAMERA", "BACK");
+					}
 				}else{
 					Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 					startActivityForResult(intent, CAMERA_REQUEST);
-					Log.i("CAMERA", "BACK");
 				}
 				
 			}else{
@@ -417,7 +422,7 @@ private static final int CAMERA_REQUEST = 1888;
 			}
 		
 	}
-	
+	//OnSelected for ActionBar Items
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
@@ -432,11 +437,13 @@ private static final int CAMERA_REQUEST = 1888;
 		return super.onOptionsItemSelected(item);
 	}
 	
+	//Setup for Search functionality
 	private void setupSearchView(SearchView search){
 		search.setIconifiedByDefault(false);
 		search.setSubmitButtonEnabled(false);
 		search.setOnQueryTextListener(this);
 	}
+	//Filter ListView from Search input
 	@Override
 	public boolean onQueryTextChange(String query){
 		if(TextUtils.isEmpty(query)){
@@ -446,7 +453,7 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		return true;
 	}
-	
+	//Close Keyboard when User finished
 	@Override
 	public boolean onQueryTextSubmit(String arg0) {
 		// TODO Auto-generated method stub
@@ -470,6 +477,8 @@ private static final int CAMERA_REQUEST = 1888;
 					locText = (EditText) view.findViewById(R.id.locText);
 					okButton = (Button) view.findViewById(R.id.okButton);
 					cancelButton = (Button) view.findViewById(R.id.cancelButton);
+					
+					locText.requestFocus();
 					
 					getDialog().setTitle("Save Image");
 					
@@ -532,6 +541,7 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 	}
+	//TabBar for Home and Gallery Fragments
 	public static class TabListener<T extends Fragment>implements ActionBar.TabListener{
 		private Fragment mFragment;
 		private final Activity mActivity;

@@ -1,5 +1,16 @@
 package com.jtilley.pictureplaces;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	PicturePlaces Widget and ActionBar
+ * 
+ * 	Package:	com.jtilley.pictureplaces
+ * 
+ * 	File: 		GalleryFragment.java
+ * 	
+ * 	Purpose:	The Fragment now acts as the UI of the old GalleryActivity. This allows the navigation between
+ * 				the Gallery and Home through a Tab Bar.
+*/
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -59,18 +70,14 @@ int index;
 			public void onItemClick(AdapterView<?> imageList, View view, int position,
 					long id) {
 				// TODO Auto-generated method stub
-				
 				parentActivity.openImageActivity(position);
-				/*Intent image = new Intent(mContext, ImageActivity.class);
-				image.putExtra("bitmap", images.get(position));
-				image.putExtra("file_path", filesArray.get(position));
-				startActivity(image);*/
 			}
 		});
 		
 		return view;
 	}
 
+	//Get list of images and Display them in GridView
 	public void displayImages(){
 		images = parentActivity.displayGalleryImg();
 		galleryView.setAdapter(new ImageAdapter(getActivity(), images));
@@ -82,6 +89,7 @@ int index;
 		super.onCreate(savedInstanceState);
 	}
 
+	//Check if the Fragment is Visible
 	@Override
 	public void onHiddenChanged(boolean hidden) {
 		// TODO Auto-generated method stub

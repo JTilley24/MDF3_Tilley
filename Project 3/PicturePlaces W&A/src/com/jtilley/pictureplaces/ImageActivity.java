@@ -8,7 +8,7 @@ package com.jtilley.pictureplaces;
  * 
  * 	File: 		ImageActivity.java
  * 	
- * 	Purpose:	This Activity displays a larger image of the selection in the GalleryActivity.The delete button
+ * 	Purpose:	This Activity displays a larger image of the selection in the GalleryFragment.The delete button
  * 				is will display a confirmation dialog for the user.
 */
 import java.io.File;
@@ -49,7 +49,7 @@ String filePath;
 		
 		imageLarge = (ImageView) findViewById(R.id.imageLarge);
 		
-		//Get Image from GalleryActivity and Display in ImageView
+		//Get Image from GalleryFragment and Display in ImageView
 		Intent intent = this.getIntent();
 		Bitmap bitmap = intent.getParcelableExtra("bitmap");
 		imageLarge.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 600, 600, false));

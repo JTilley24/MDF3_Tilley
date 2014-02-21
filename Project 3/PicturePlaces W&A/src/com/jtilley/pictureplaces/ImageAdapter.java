@@ -8,7 +8,7 @@ package com.jtilley.pictureplaces;
  * 
  * 	File: 		ImageAdapter.java
  * 	
- * 	Purpose:	This Custom BaseAdapter is used for the GridView in GalleryActivity. It adds the bitmap to an
+ * 	Purpose:	This Custom BaseAdapter is used for the GridView in GalleryFragment. It adds the bitmap to an
  *  			ImageView and sizes it.
 */
 import java.util.ArrayList;

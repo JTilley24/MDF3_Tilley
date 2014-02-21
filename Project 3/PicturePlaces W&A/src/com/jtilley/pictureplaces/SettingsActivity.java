@@ -8,7 +8,8 @@ package com.jtilley.pictureplaces;
  * 
  * 	File: 		SettingsActivity.java
  * 	
- * 	Purpose:	
+ * 	Purpose:	This activity allows the User to select what camera to use and open GPS settings. An Intent
+ * 				is launched to display the device's location settings.
 */
 import android.os.Bundle;
 import android.provider.Settings;
@@ -52,7 +53,7 @@ SharedPreferences.Editor editPrefs;
 		getMenuInflater().inflate(R.menu.settings, menu);
 		return true;
 	}
-
+	//Check For RadioButtons
 	public void onRadioButtonClicked(View view){
 		boolean checked = ((RadioButton) view).isChecked();
 		

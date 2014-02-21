@@ -1,5 +1,16 @@
 package com.jtilley.pictureplaces;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	PicturePlaces Widget and ActionBar
+ * 
+ * 	Package:	com.jtilley.pictureplaces
+ * 
+ * 	File: 		WidgetConfig.java
+ * 	
+ * 	Purpose:	This activity is the configuration options for the Widget. The User can select what image is
+ * 				displayed in the Widget.
+*/
 import java.io.File;
 import java.util.ArrayList;
 
@@ -37,18 +48,20 @@ SharedPreferences.Editor editPrefs;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_widget_config);
 		
+		//Get UI Elements
 		title = (TextView) this.findViewById(R.id.textView1);
 		doneButton = (Button) this.findViewById(R.id.doneButton);
 		doneButton.setOnClickListener(this);
 		imageButton = (RadioButton) this.findViewById(R.id.lastPicButton);
 		locButton = (RadioButton) this.findViewById(R.id.lastLocButton);
 		
-		
+		//Get Location and Last Picture Taken
 		prefs = getSharedPreferences("user_prefs", 0);
 		lastLoc = prefs.getString("last_location", null).replace(" ", "");
 		Log.i("LOCATION", lastLoc);
 		lastpic = prefs.getString("last_image", null);
 		
+		//Set Config to Not Done
 		editPrefs = prefs.edit();
 		editPrefs.putBoolean("config", false);
 		editPrefs.commit();
@@ -73,21 +86,21 @@ SharedPreferences.Editor editPrefs;
 		getMenuInflater().inflate(R.menu.widget_config, menu);
 		return true;
 	}
-
+	//Save the User's Selection
 	public void saveOption(String option){
 		editPrefs.putString("option", option);
 		editPrefs.putBoolean("config", true);
 		editPrefs.commit();
 	}
-	
+	//Finish with Config
 	public void sendWidget(int widgetId){
-		
 		Intent resultsValue = new Intent();
 		resultsValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
 		setResult(RESULT_OK, resultsValue);
 		finish();
 	}
 	
+	//Setup for Widget
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
@@ -98,6 +111,7 @@ SharedPreferences.Editor editPrefs;
 			if(widgetId != AppWidgetManager.INVALID_APPWIDGET_ID){
 				RemoteViews remote = new RemoteViews(this.getPackageName(), R.layout.widget_layout);
 				
+				//Check for Selection
 				if(locButton.isChecked()){
 					remote.setTextViewText(R.id.widgetHeader, "Last Location: " + lastLoc);
 					remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(new File(imagePaths.get(0))));

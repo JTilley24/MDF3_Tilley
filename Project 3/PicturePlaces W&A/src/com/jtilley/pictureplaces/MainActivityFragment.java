@@ -1,6 +1,15 @@
 package com.jtilley.pictureplaces;
-
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	PicturePlaces Widget and ActionBar
+ * 
+ * 	Package:	com.jtilley.pictureplaces
+ * 
+ * 	File: 		MainActivityFragment.java
+ * 	
+ * 	Purpose:	This Fragment now handles the UI of the MainActivity for the Tab Bar.
+*/
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -11,14 +20,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivityFragment extends Fragment{
-Button camButton;
-Button galleryButton;
 ListView locList;
 TextView listHeader;
 
@@ -51,8 +57,6 @@ TextView listHeader;
 		
 		locList = (ListView) view.findViewById(R.id.locatList);
 		locList.setTextFilterEnabled(true);
-		camButton = (Button) view.findViewById(R.id.camButton);
-		galleryButton = (Button) view.findViewById(R.id.galleryButton);
 		listHeader = (TextView) view.findViewById(R.id.listHeader);
 		
 		//Open Gallery to display images at Selected Location
@@ -65,12 +69,9 @@ TextView listHeader;
 						parentActivity.openGallery(locListView.getItemAtPosition(position).toString());
 					}
 				});
-
-		
-		
 		return view;
 	}
-
+	//Display Saved Location in ListView
 	public void displaySaved(ArrayList<String> locStrings) {
 		// TODO Auto-generated method stub
 		locList.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, locStrings));
@@ -80,7 +81,7 @@ TextView listHeader;
 			listHeader.setText("No Saved Images");
 		}
 	}
-	
+	//Filter ListView for Search in ActionBar
 	public void listFilter(String query, Boolean filtered){
 		if(filtered == false){
 			locList.clearTextFilter();
@@ -88,11 +89,4 @@ TextView listHeader;
 			locList.setFilterText(query);
 		}
 	}
-
-	@Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-	}
-
 }

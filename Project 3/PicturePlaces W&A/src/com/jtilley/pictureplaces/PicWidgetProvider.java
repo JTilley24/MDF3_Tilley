@@ -1,5 +1,16 @@
 package com.jtilley.pictureplaces;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	PicturePlaces Widget and ActionBar
+ * 
+ * 	Package:	com.jtilley.pictureplaces
+ * 
+ * 	File: 		PicWidgetProvider.java
+ * 	
+ * 	Purpose:	This Activity handles the Updates for the Widget. Data is collected from last time using the application
+ * 				and the Widget displays the image for last picture or location.
+*/
 import java.io.File;
 import java.util.ArrayList;
 
@@ -32,6 +43,7 @@ ArrayList<String> imagePaths;
 			int[] appWidgetIds) {
 		// TODO Auto-generated method stub
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
+		//Check if Config is Done and Set UI to current image
 		SharedPreferences prefs = context.getSharedPreferences("user_prefs", 0);
 		if(prefs.getBoolean("config", false)){
 			String option = prefs.getString("option", null);
