@@ -16,7 +16,7 @@
 	    android:layout_alignLeft="@+id/widgetGroup"
 	    android:layout_alignParentTop="true"
 	    android:layout_marginTop="16dp"
-	    android:text="Set Image Resource" />
+	    android:text="@string/config_title" />
     
 	<RadioGroup android:id="@+id/widgetGroup"
 	    		android:layout_width="wrap_content"
@@ -28,14 +28,14 @@
 		    android:id="@+id/lastPicButton"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:text="Image Taken Last" />
+		    android:text="@string/pic_radio" />
 	
 	    <RadioButton
 	        android:id="@+id/lastLocButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginTop="14dp"
-	        android:text="Image from Last Location" />
+	        android:text="@string/loc_radio" />
     </RadioGroup>
 
 	<Button
@@ -45,6 +45,6 @@
 	    android:layout_below="@+id/widgetGroup"
 	    android:layout_centerHorizontal="true"
 	    android:layout_marginTop="50dp"
-	    android:text="DONE" />
+	    android:text="@string/done_button" />
 
 </RelativeLayout>

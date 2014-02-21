@@ -4,4 +4,5 @@
     <issue id="CommitTransaction" severity="ignore" />
     <issue id="NewApi" severity="ignore" />
     <issue id="SdCardPath" severity="ignore" />
+    <issue id="ShowToast" severity="ignore" />
 </lint>

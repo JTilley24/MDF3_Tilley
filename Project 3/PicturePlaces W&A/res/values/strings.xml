@@ -22,6 +22,9 @@
     <string name="back_camera">Back Camera</string>
     <string name="gps_settings">GPS Settings</string>
     <string name="title_activity_widget_config">WidgetConfig</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="config_title">Set Image Resource</string>
+    <string name="pic_radio">Image Taken Last</string>
+    <string name="loc_radio">Image from Last Location</string>
+    <string name="done_button">DONE</string>
 
 </resources>

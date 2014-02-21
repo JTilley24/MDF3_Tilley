@@ -8,8 +8,8 @@ package com.jtilley.pictureplaces;
  * 
  * 	File: 		MainActivity.java
  * 	
- * 	Purpose:	This Activity displays a button to open the camera and a button to view a gallery of saved images.
- * 				A ListView is also used to display previous location pictures were taken.
+ * 	Purpose:	This Activity now displays an ActionBar with Search and Camera functionality. The Home and Gallery is
+ * 				now part of a Tab Bar navigation.
 */
 
 
@@ -199,7 +199,11 @@ private static final int CAMERA_REQUEST = 1888;
 		Log.i("TIME", day);
 		
 		String filename = locName + "_" + day + ".jpg";
-	
+		
+		SharedPreferences.Editor editPrefs = prefs.edit();
+		editPrefs.putString("last_image", filename);
+		editPrefs.commit();
+		
 		Toast.makeText(mContext, "Image Saved: " + filename, Toast.LENGTH_LONG).show();
 		
 		File file = new File(path, filename);
@@ -351,6 +355,10 @@ private static final int CAMERA_REQUEST = 1888;
 				}
 			}
 			Log.i("CLOSEST", closest.toString());
+			SharedPreferences.Editor editPrefs = prefs.edit();
+			editPrefs.putString("last_location", closest.toString());
+			editPrefs.commit();
+			
 			if(closest.toString() != ""){
 				Toast.makeText(mContext, "Current Location is close to " + closest.toString(), Toast.LENGTH_LONG).show();
 			}
