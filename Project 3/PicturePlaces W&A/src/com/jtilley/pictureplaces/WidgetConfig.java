@@ -58,7 +58,7 @@ SharedPreferences.Editor editPrefs;
 		//Get Location and Last Picture Taken
 		prefs = getSharedPreferences("user_prefs", 0);
 		lastLoc = prefs.getString("last_location", null).replace(" ", "");
-		Log.i("LOCATION", lastLoc);
+		//Log.i("LOCATION", lastLoc);
 		lastpic = prefs.getString("last_image", null);
 		
 		//Set Config to Not Done
@@ -70,11 +70,12 @@ SharedPreferences.Editor editPrefs;
 		
 		File imageList[] = file.listFiles();
 		imagePaths = new ArrayList<String>();
-		
-		for(int i=0; i< imageList.length; i++){
-			if(imageList[i].getAbsolutePath().toString().contains(lastLoc)){
-				imagePaths.add(imageList[i].getAbsolutePath());
-				Log.i("IMAGE", imageList[i].getAbsolutePath());
+		if(imageList != null){
+			for(int i=0; i< imageList.length; i++){
+				if(imageList[i].getAbsolutePath().toString().contains(lastLoc)){
+					imagePaths.add(imageList[i].getAbsolutePath());
+					Log.i("IMAGE", imageList[i].getAbsolutePath());
+				}
 			}
 		}
 		
@@ -110,32 +111,38 @@ SharedPreferences.Editor editPrefs;
 			int widgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
 			if(widgetId != AppWidgetManager.INVALID_APPWIDGET_ID){
 				RemoteViews remote = new RemoteViews(this.getPackageName(), R.layout.widget_layout);
-				
-				//Check for Selection
-				if(locButton.isChecked()){
-					remote.setTextViewText(R.id.widgetHeader, "Last Location: " + lastLoc);
-					remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(new File(imagePaths.get(0))));
-					AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
-					saveOption("location");
-					Intent mainIntent = new Intent(this, MainActivity.class);
-					PendingIntent pend = PendingIntent.getActivity(this, 0, mainIntent, 0);
-					remote.setOnClickPendingIntent(R.id.widgetImage, pend);
-					AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
-					sendWidget(widgetId);
-				}else if(imageButton.isChecked()){
-					String[] picLoc = lastpic.replace("/mnt/sdcard/PicPlaces/", "").split("_");
-					remote.setTextViewText(R.id.widgetHeader,"Last Picture: " + picLoc[0]);
-					File path = new File("/mnt/sdcard/PicPlaces/" + lastpic);
-					remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(path));
-					AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
-					saveOption("picture");
-					Intent mainIntent = new Intent(this, MainActivity.class);
-					PendingIntent pend = PendingIntent.getActivity(this, 0, mainIntent, 0);
-					remote.setOnClickPendingIntent(R.id.widgetImage, pend);
-					AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
-					sendWidget(widgetId);
+				if(imagePaths.size() > 0){
+					//Check for Selection
+					if(locButton.isChecked()){
+						remote.setTextViewText(R.id.widgetHeader, "Last Location: " + lastLoc);
+						remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(new File(imagePaths.get(0))));
+						AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
+						saveOption("location");
+						Intent mainIntent = new Intent(this, MainActivity.class);
+						PendingIntent pend = PendingIntent.getActivity(this, 0, mainIntent, 0);
+						remote.setOnClickPendingIntent(R.id.widgetImage, pend);
+						AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
+						sendWidget(widgetId);
+					}else if(imageButton.isChecked()){
+						String[] picLoc = lastpic.replace("/mnt/sdcard/PicPlaces/", "").split("_");
+						remote.setTextViewText(R.id.widgetHeader,"Last Picture: " + picLoc[0]);
+						File path = new File("/mnt/sdcard/PicPlaces/" + lastpic);
+						remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(path));
+						AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
+						saveOption("picture");
+						Intent mainIntent = new Intent(this, MainActivity.class);
+						PendingIntent pend = PendingIntent.getActivity(this, 0, mainIntent, 0);
+						remote.setOnClickPendingIntent(R.id.widgetImage, pend);
+						AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
+						sendWidget(widgetId);
+					}else{
+						Toast.makeText(this, "Please Select Option", Toast.LENGTH_LONG).show();
+					}
 				}else{
-					Toast.makeText(this, "Please Select Option", Toast.LENGTH_LONG).show();
+					remote.setTextViewText(R.id.widgetHeader, "No Picture to Display.");
+					AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
+					AppWidgetManager.getInstance(this).updateAppWidget(widgetId, remote);
+					sendWidget(widgetId);
 				}
 				
 			}

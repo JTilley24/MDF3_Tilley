@@ -47,6 +47,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.Camera;
 import android.widget.SearchView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -169,24 +170,29 @@ private static final int CAMERA_REQUEST = 1888;
 			
 			File imageList[] = file.listFiles();
 			//Check for selection from MainActivity and Add images
-			if(locationString.equalsIgnoreCase("all")){
-				for(int i=0; i< imageList.length; i++){
-					Log.i("IMAGE", imageList[i].getAbsolutePath());
-					Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
-					images.add(imageB);
-					filesArray.add(imageList[i].getAbsolutePath());	
-				}
-			}else{
-				for(int i=0; i< imageList.length; i++){
-					Log.i("IMAGE", imageList[i].getAbsolutePath());
-					if(imageList[i].getAbsolutePath().contains(locationString)){
+			if(imageList != null){
+				if(locationString.equalsIgnoreCase("all")){
+					for(int i=0; i< imageList.length; i++){
+						Log.i("IMAGE", imageList[i].getAbsolutePath());
 						Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
 						images.add(imageB);
-						filesArray.add(imageList[i].getAbsolutePath());
+						filesArray.add(imageList[i].getAbsolutePath());	
+					}
+				}else{
+					for(int i=0; i< imageList.length; i++){
+						Log.i("IMAGE", imageList[i].getAbsolutePath());
+						if(imageList[i].getAbsolutePath().contains(locationString)){
+							Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
+							images.add(imageB);
+							filesArray.add(imageList[i].getAbsolutePath());
+						}
 					}
 				}
+				return images;
+			}else{
+				return null;
 			}
-			return images;
+			
 	}
 	
 	
@@ -398,17 +404,17 @@ private static final int CAMERA_REQUEST = 1888;
 		Location location = lManager.getLastKnownLocation(provider);
 		if(!(checkBattery())){
 				Toast.makeText(mContext, "Battery Low and Camera is Disabled!", Toast.LENGTH_LONG).show();
-			}else if(gpsConnected(location)){
+		}else if(gpsConnected(location)){
 				String cameraString = prefs.getString("CAMERA", null);
 				if(cameraString != null){
 					if(cameraString.equalsIgnoreCase("front")){
 						Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-						intent.putExtra("android.intent.extras.CAMERA_FACING", 1);
+						intent.putExtra("android.intent.extras.CAMERA_FACING", Camera.CameraInfo.CAMERA_FACING_FRONT);
 						Log.i("CAMERA", "FRONT");
 						startActivityForResult(intent, CAMERA_REQUEST);
 					}else{
 						Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-						intent.putExtra("android.intent.extras.CAMERA_FACING", 0);
+						intent.putExtra("android.intent.extras.CAMERA_FACING", Camera.CameraInfo.CAMERA_FACING_BACK);
 						startActivityForResult(intent, CAMERA_REQUEST);
 						Log.i("CAMERA", "BACK");
 					}

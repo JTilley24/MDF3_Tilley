@@ -59,10 +59,9 @@ int index;
 		
 		headerText = (TextView) view.findViewById(R.id.headerText);
 		
-		ArrayList<Bitmap> images = parentActivity.displayGalleryImg();
+		images = parentActivity.displayGalleryImg();
 		
 		galleryView = (GridView) view.findViewById(R.id.galleryView);
-		galleryView.setAdapter(new ImageAdapter(getActivity(), images));
 		galleryView.setOnItemClickListener(new OnItemClickListener() {
 			
 			//Open ImageActivity to display larger image
@@ -73,6 +72,7 @@ int index;
 				parentActivity.openImageActivity(position);
 			}
 		});
+		displayImages();
 		
 		return view;
 	}
@@ -80,7 +80,10 @@ int index;
 	//Get list of images and Display them in GridView
 	public void displayImages(){
 		images = parentActivity.displayGalleryImg();
-		galleryView.setAdapter(new ImageAdapter(getActivity(), images));
+		if(images != null){
+			galleryView.setAdapter(new ImageAdapter(getActivity(), images));
+		}
+		
 	}
 	
 	@Override

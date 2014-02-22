@@ -46,17 +46,14 @@ ArrayList<String> imagePaths;
 		//Check if Config is Done and Set UI to current image
 		SharedPreferences prefs = context.getSharedPreferences("user_prefs", 0);
 		if(prefs.getBoolean("config", false)){
-			String option = prefs.getString("option", null);
 			RemoteViews remote = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-			if(option.equals("location")){
-				lastLoc = prefs.getString("last_location", null).replace(" ", "");
-				images = new ArrayList<Bitmap>();
-				
-				File file = new File(Environment.getExternalStorageDirectory() + "/PicPlaces/");
-				
-				File imageList[] = file.listFiles();
-				imagePaths = new ArrayList<String>();
-				
+			images = new ArrayList<Bitmap>();
+			
+			File file = new File(Environment.getExternalStorageDirectory() + "/PicPlaces/");
+			
+			File imageList[] = file.listFiles();
+			imagePaths = new ArrayList<String>();
+			if(imageList != null){
 				for(int i=0; i< imageList.length; i++){
 					if(imageList[i].getAbsolutePath().toString().contains(lastLoc)){
 						Bitmap imageB = BitmapFactory.decodeFile(imageList[i].getAbsolutePath());
@@ -65,15 +62,23 @@ ArrayList<String> imagePaths;
 						Log.i("IMAGE", imageList[i].getAbsolutePath());
 					}
 				}
-				remote.setTextViewText(R.id.widgetHeader, "Last Location: " + lastLoc);
-				remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(new File(imagePaths.get(0))));
-			}else if(option.equals("picture")){
-				lastpic = prefs.getString("last_image", null);
-				String[] picLoc = lastpic.replace("/mnt/sdcard/PicPlaces/", "").split("_");
-				remote.setTextViewText(R.id.widgetHeader,"Last Picture: " + picLoc[0]);
-				remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(new File(lastpic)));
+				
+				String option = prefs.getString("option", null);
+				
+				if(option.equals("location")){
+					lastLoc = prefs.getString("last_location", null).replace(" ", "");
+					
+					remote.setTextViewText(R.id.widgetHeader, "Last Location: " + lastLoc);
+					remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(new File(imagePaths.get(0))));
+				}else if(option.equals("picture")){
+					lastpic = prefs.getString("last_image", null);
+					String[] picLoc = lastpic.replace("/mnt/sdcard/PicPlaces/", "").split("_");
+					remote.setTextViewText(R.id.widgetHeader,"Last Picture: " + picLoc[0]);
+					remote.setImageViewUri(R.id.widgetImage, Uri.fromFile(new File(lastpic)));
+				}
+			}else{
+				remote.setTextViewText(R.id.widgetHeader, "No Picture to Display");
 			}
-			
 			appWidgetManager.updateAppWidget(appWidgetIds, remote);
 		}
 	}
