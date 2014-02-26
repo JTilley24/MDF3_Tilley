@@ -1,0 +1,4678 @@
+{
+
+	"MLB": [{
+                "id": 1,
+                "uid": "s:1~l:10~t:1",
+                "location": "Baltimore",
+                "name": "Orioles",
+                "abbreviation": "BAL",
+                "color": "201b1b",
+                "venues": [{
+                    "id": 1,
+                    "name": "Oriole Park at Camden Yards",
+                    "city": "Baltimore",
+                    "state": "Maryland",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/1"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/1/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/1/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/bal/baltimore-orioles?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=1&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 2,
+                "uid": "s:1~l:10~t:2",
+                "location": "Boston",
+                "name": "Red Sox",
+                "abbreviation": "BOS",
+                "color": "00224b",
+                "venues": [{
+                    "id": 2,
+                    "name": "Fenway Park",
+                    "city": "Boston",
+                    "state": "Massachusetts",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/2"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/2/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/2/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/bos/boston-red-sox?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=2&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 3,
+                "uid": "s:1~l:10~t:3",
+                "location": "Los Angeles",
+                "name": "Angels",
+                "abbreviation": "LAA",
+                "color": "a50017",
+                "venues": [{
+                    "id": 3,
+                    "name": "Angel Stadium of Anaheim",
+                    "city": "Anaheim",
+                    "state": "California",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/3"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/3/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/3/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/laa/los-angeles-angels?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=3&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 4,
+                "uid": "s:1~l:10~t:4",
+                "location": "Chicago",
+                "name": "White Sox",
+                "abbreviation": "CHW",
+                "color": "1b1516",
+                "venues": [{
+                    "id": 4,
+                    "name": "U.S. Cellular Field",
+                    "city": "Chicago",
+                    "state": "Illinois",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/4"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/4/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/4/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/chw/chicago-white-sox?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=4&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 5,
+                "uid": "s:1~l:10~t:5",
+                "location": "Cleveland",
+                "name": "Indians",
+                "abbreviation": "CLE",
+                "color": "00264e",
+                "venues": [{
+                    "id": 5,
+                    "name": "Progressive Field",
+                    "city": "Cleveland",
+                    "state": "Ohio",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/5"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/5/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/5/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/cle/cleveland-indians?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=5&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 6,
+                "uid": "s:1~l:10~t:6",
+                "location": "Detroit",
+                "name": "Tigers",
+                "abbreviation": "DET",
+                "color": "002d5c",
+                "venues": [{
+                    "id": 45,
+                    "name": "Comerica Park",
+                    "city": "Detroit",
+                    "state": "Michigan",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/6"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/6/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/6/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/det/detroit-tigers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=6&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 7,
+                "uid": "s:1~l:10~t:7",
+                "location": "Kansas City",
+                "name": "Royals",
+                "abbreviation": "KC",
+                "color": "003b72",
+                "venues": [{
+                    "id": 7,
+                    "name": "Kauffman Stadium",
+                    "city": "Kansas City",
+                    "state": "Missouri",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/7"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/7/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/7/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/kc/kansas-city-royals?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=7&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 8,
+                "uid": "s:1~l:10~t:8",
+                "location": "Milwaukee",
+                "name": "Brewers",
+                "abbreviation": "MIL",
+                "color": "050C33",
+                "venues": [{
+                    "id": 46,
+                    "name": "Miller Park",
+                    "city": "Milwaukee",
+                    "state": "Wisconsin",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/8"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/8/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/8/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/mil/milwaukee-brewers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=8&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 9,
+                "uid": "s:1~l:10~t:9",
+                "location": "Minnesota",
+                "name": "Twins",
+                "abbreviation": "MIN",
+                "color": "012756",
+                "venues": [{
+                    "id": 210,
+                    "name": "Target Field",
+                    "city": "Minneapolis",
+                    "state": "Minnesota",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/9"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/9/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/9/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/min/minnesota-twins?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=9&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 10,
+                "uid": "s:1~l:10~t:10",
+                "location": "New York",
+                "name": "Yankees",
+                "abbreviation": "NYY",
+                "color": "011739",
+                "venues": [{
+                    "id": 208,
+                    "name": "Yankee Stadium",
+                    "city": "New York",
+                    "state": "New York",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/10"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/10/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/10/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/nyy/new-york-yankees?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=10&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 11,
+                "uid": "s:1~l:10~t:11",
+                "location": "Oakland",
+                "name": "Athletics",
+                "abbreviation": "OAK",
+                "color": "014326",
+                "venues": [{
+                    "id": 11,
+                    "name": "O.co Coliseum",
+                    "city": "Oakland",
+                    "state": "California",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/11"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/11/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/11/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/oak/oakland-athletics?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=11&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 12,
+                "uid": "s:1~l:10~t:12",
+                "location": "Seattle",
+                "name": "Mariners",
+                "abbreviation": "SEA",
+                "color": "012a5b",
+                "venues": [{
+                    "id": 41,
+                    "name": "Safeco Field",
+                    "city": "Seattle",
+                    "state": "Washington",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/12"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/12/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/12/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/sea/seattle-mariners?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=12&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 13,
+                "uid": "s:1~l:10~t:13",
+                "location": "Texas",
+                "name": "Rangers",
+                "abbreviation": "TEX",
+                "color": "003879",
+                "venues": [{
+                    "id": 13,
+                    "name": "Globe Life Park in Arlington",
+                    "city": "Arlington",
+                    "state": "Texas",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/13"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/13/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/13/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/tex/texas-rangers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=13&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 14,
+                "uid": "s:1~l:10~t:14",
+                "location": "Toronto",
+                "name": "Blue Jays",
+                "abbreviation": "TOR",
+                "color": "0069ac",
+                "venues": [{
+                    "id": 14,
+                    "name": "Rogers Centre",
+                    "city": "Toronto",
+                    "state": "Ontario",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/14"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/14/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/14/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/tor/toronto-blue-jays?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=14&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 15,
+                "uid": "s:1~l:10~t:15",
+                "location": "Atlanta",
+                "name": "Braves",
+                "abbreviation": "ATL",
+                "color": "002248",
+                "venues": [{
+                    "id": 29,
+                    "name": "Turner Field",
+                    "city": "Atlanta",
+                    "state": "Georgia",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/15"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/15/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/15/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/atl/atlanta-braves?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=15&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 16,
+                "uid": "s:1~l:10~t:16",
+                "location": "Chicago",
+                "name": "Cubs",
+                "abbreviation": "CHC",
+                "color": "00417d",
+                "venues": [{
+                    "id": 16,
+                    "name": "Wrigley Field",
+                    "city": "Chicago",
+                    "state": "Illinois",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/16"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/16/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/16/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/chc/chicago-cubs?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=16&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 17,
+                "uid": "s:1~l:10~t:17",
+                "location": "Cincinnati",
+                "name": "Reds",
+                "abbreviation": "CIN",
+                "color": "c41422",
+                "venues": [{
+                    "id": 83,
+                    "name": "Great American Ball Park",
+                    "city": "Cincinnati",
+                    "state": "Ohio",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/17"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/17/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/17/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/cin/cincinnati-reds?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=17&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 18,
+                "uid": "s:1~l:10~t:18",
+                "location": "Houston",
+                "name": "Astros",
+                "abbreviation": "HOU",
+                "color": "000000",
+                "venues": [{
+                    "id": 44,
+                    "name": "Minute Maid Park",
+                    "city": "Houston",
+                    "state": "Texas",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/18"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/18/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/18/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/hou/houston-astros?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=18&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 19,
+                "uid": "s:1~l:10~t:19",
+                "location": "Los Angeles",
+                "name": "Dodgers",
+                "abbreviation": "LAD",
+                "color": "00337f",
+                "venues": [{
+                    "id": 19,
+                    "name": "Dodger Stadium",
+                    "city": "Los Angeles",
+                    "state": "California",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/19"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/19/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/19/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/lad/los-angeles-dodgers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=19&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 20,
+                "uid": "s:1~l:10~t:20",
+                "location": "Washington",
+                "name": "Nationals",
+                "abbreviation": "WSH",
+                "color": "0a295d",
+                "venues": [{
+                    "id": 89,
+                    "name": "Nationals Park",
+                    "city": "Washington",
+                    "state": "D.C.",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/20"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/20/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/20/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/wsh/washington-nationals?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=20&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 21,
+                "uid": "s:1~l:10~t:21",
+                "location": "New York",
+                "name": "Mets",
+                "abbreviation": "NYM",
+                "color": "00407b",
+                "venues": [{
+                    "id": 209,
+                    "name": "Citi Field",
+                    "city": "New York",
+                    "state": "New York",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/21"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/21/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/21/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/nym/new-york-mets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=21&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 22,
+                "uid": "s:1~l:10~t:22",
+                "location": "Philadelphia",
+                "name": "Phillies",
+                "abbreviation": "PHI",
+                "color": "be0011",
+                "venues": [{
+                    "id": 84,
+                    "name": "Citizens Bank Park",
+                    "city": "Philadelphia",
+                    "state": "Pennsylvania",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/22"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/22/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/22/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/phi/philadelphia-phillies?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=22&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 23,
+                "uid": "s:1~l:10~t:23",
+                "location": "Pittsburgh",
+                "name": "Pirates",
+                "abbreviation": "PIT",
+                "color": "111111",
+                "venues": [{
+                    "id": 47,
+                    "name": "PNC Park",
+                    "city": "Pittsburgh",
+                    "state": "Pennsylvania",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/23"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/23/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/23/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/pit/pittsburgh-pirates?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=23&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 24,
+                "uid": "s:1~l:10~t:24",
+                "location": "St. Louis",
+                "name": "Cardinals",
+                "abbreviation": "STL",
+                "color": "b80220",
+                "venues": [{
+                    "id": 87,
+                    "name": "Busch Stadium",
+                    "city": "St. Louis",
+                    "state": "Missouri",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/24"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/24/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/24/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/stl/st-louis-cardinals?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=24&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 25,
+                "uid": "s:1~l:10~t:25",
+                "location": "San Diego",
+                "name": "Padres",
+                "abbreviation": "SD",
+                "color": "001d44",
+                "venues": [{
+                    "id": 85,
+                    "name": "Petco Park",
+                    "city": "San Diego",
+                    "state": "California",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/25"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/25/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/25/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/sd/san-diego-padres?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=25&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 26,
+                "uid": "s:1~l:10~t:26",
+                "location": "San Francisco",
+                "name": "Giants",
+                "abbreviation": "SF",
+                "color": "161415",
+                "venues": [{
+                    "id": 43,
+                    "name": "AT&T Park",
+                    "city": "San Francisco",
+                    "state": "California",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/26"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/26/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/26/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/sf/san-francisco-giants?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=26&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 27,
+                "uid": "s:1~l:10~t:27",
+                "location": "Colorado",
+                "name": "Rockies",
+                "abbreviation": "COL",
+                "color": "220d48",
+                "venues": [{
+                    "id": 27,
+                    "name": "Coors Field",
+                    "city": "Denver",
+                    "state": "Colorado",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/27"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/27/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/27/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/col/colorado-rockies?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=27&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 28,
+                "uid": "s:1~l:10~t:28",
+                "location": "Miami",
+                "name": "Marlins",
+                "abbreviation": "MIA",
+                "color": "0081c7",
+                "venues": [{
+                    "id": 212,
+                    "name": "Marlins Park",
+                    "city": "Miami",
+                    "state": "Florida",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/28"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/28/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/28/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/mia/miami-marlins?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=28&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 29,
+                "uid": "s:1~l:10~t:29",
+                "location": "Arizona",
+                "name": "Diamondbacks",
+                "abbreviation": "ARI",
+                "color": "a40013",
+                "venues": [{
+                    "id": 30,
+                    "name": "Chase Field",
+                    "city": "Phoenix",
+                    "state": "Arizona",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/29"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/29/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/29/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/ari/arizona-diamondbacks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=29&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 30,
+                "uid": "s:1~l:10~t:30",
+                "location": "Tampa Bay",
+                "name": "Rays",
+                "abbreviation": "TB",
+                "color": "002454",
+                "venues": [{
+                    "id": 31,
+                    "name": "Tropicana Field",
+                    "city": "St. Petersburg",
+                    "state": "Florida",
+                    "country": "",
+                    "capacity": 0
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/30"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/30/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/baseball/mlb/teams/30/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/mlb/team/_/name/tb/tampa-bay-rays?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/mlb/clubhouse?teamId=30&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }],
+	"NFL": [{
+                "id": 1,
+                "uid": "s:20~l:28~t:1",
+                "location": "Atlanta",
+                "name": "Falcons",
+                "nickname": "Atlanta",
+                "abbreviation": "ATL",
+                "color": "000000",
+                "venues": [{
+                    "id": 29,
+                    "name": "Georgia Dome",
+                    "city": "Atlanta",
+                    "state": "GA",
+                    "country": "",
+                    "capacity": 71250
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/1"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/1/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/1/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/atl/atlanta-falcons?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=1&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 2,
+                "uid": "s:20~l:28~t:2",
+                "location": "Buffalo",
+                "name": "Bills",
+                "nickname": "Buffalo",
+                "abbreviation": "BUF",
+                "color": "04407F",
+                "venues": [{
+                    "id": 2,
+                    "name": "Ralph Wilson Stadium",
+                    "city": "Buffalo",
+                    "state": "NY",
+                    "country": "",
+                    "capacity": 73097
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/2"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/2/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/2/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/buf/buffalo-bills?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=2&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 3,
+                "uid": "s:20~l:28~t:3",
+                "location": "Chicago",
+                "name": "Bears",
+                "nickname": "Chicago",
+                "abbreviation": "CHI",
+                "color": "152644",
+                "venues": [{
+                    "id": 3,
+                    "name": "Soldier Field",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "country": "",
+                    "capacity": 61500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/3"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/3/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/3/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/chi/chicago-bears?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=3&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 4,
+                "uid": "s:20~l:28~t:4",
+                "location": "Cincinnati",
+                "name": "Bengals",
+                "nickname": "Cincinnati",
+                "abbreviation": "CIN",
+                "color": "FF2700",
+                "venues": [{
+                    "id": 49,
+                    "name": "Paul Brown Stadium",
+                    "city": "Cincinnati",
+                    "state": "OH",
+                    "country": "",
+                    "capacity": 65515
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/4"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/4/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/4/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/cin/cincinnati-bengals?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=4&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 5,
+                "uid": "s:20~l:28~t:5",
+                "location": "Cleveland",
+                "name": "Browns",
+                "nickname": "Cleveland",
+                "abbreviation": "CLE",
+                "color": "4C230E",
+                "venues": [{
+                    "id": 46,
+                    "name": "FirstEnergy Stadium",
+                    "city": "Cleveland",
+                    "state": "OH",
+                    "country": "",
+                    "capacity": 73200
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/5"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/5/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/5/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/cle/cleveland-browns?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=5&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 6,
+                "uid": "s:20~l:28~t:6",
+                "location": "Dallas",
+                "name": "Cowboys",
+                "nickname": "Dallas",
+                "abbreviation": "DAL",
+                "color": "002E4D",
+                "venues": [{
+                    "id": 120,
+                    "name": "AT&T Stadium",
+                    "city": "Arlington",
+                    "state": "TX",
+                    "country": "",
+                    "capacity": 80000
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/6"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/6/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/6/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/dal/dallas-cowboys?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=6&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 7,
+                "uid": "s:20~l:28~t:7",
+                "location": "Denver",
+                "name": "Broncos",
+                "nickname": "Denver",
+                "abbreviation": "DEN",
+                "color": "002E4D",
+                "venues": [{
+                    "id": 7,
+                    "name": "Sports Authority Field at Mile High",
+                    "city": "Denver",
+                    "state": "CO",
+                    "country": "",
+                    "capacity": 76125
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/7"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/7/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/7/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/den/denver-broncos?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=7&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 8,
+                "uid": "s:20~l:28~t:8",
+                "location": "Detroit",
+                "name": "Lions",
+                "nickname": "Detroit",
+                "abbreviation": "DET",
+                "color": "035C98",
+                "venues": [{
+                    "id": 55,
+                    "name": "Ford Field",
+                    "city": "Detroit",
+                    "state": "MI",
+                    "country": "",
+                    "capacity": 64500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/8"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/8/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/8/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/det/detroit-lions?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=8&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 9,
+                "uid": "s:20~l:28~t:9",
+                "location": "Green Bay",
+                "name": "Packers",
+                "nickname": "Green Bay",
+                "abbreviation": "GB",
+                "color": "204E32",
+                "venues": [{
+                    "id": 9,
+                    "name": "Lambeau Field",
+                    "city": "Green Bay",
+                    "state": "WI",
+                    "country": "",
+                    "capacity": 72928
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/9"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/9/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/9/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/gb/green-bay-packers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=9&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 10,
+                "uid": "s:20~l:28~t:10",
+                "location": "Tennessee",
+                "name": "Titans",
+                "nickname": "Tennessee",
+                "abbreviation": "TEN",
+                "color": "2F95DD",
+                "venues": [{
+                    "id": 45,
+                    "name": "LP Field",
+                    "city": "Nashville",
+                    "state": "TN",
+                    "country": "",
+                    "capacity": 69143
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/10"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/10/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/10/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/ten/tennessee-titans?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=10&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 11,
+                "uid": "s:20~l:28~t:11",
+                "location": "Indianapolis",
+                "name": "Colts",
+                "nickname": "Indy",
+                "abbreviation": "IND",
+                "color": "00417E",
+                "venues": [{
+                    "id": 119,
+                    "name": "Lucas Oil Stadium",
+                    "city": "Indianapolis",
+                    "state": "IN",
+                    "country": "",
+                    "capacity": 63000
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/11"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/11/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/11/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/ind/indianapolis-colts?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=11&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 12,
+                "uid": "s:20~l:28~t:12",
+                "location": "Kansas City",
+                "name": "Chiefs",
+                "nickname": "KC",
+                "abbreviation": "KC",
+                "color": "BE1415",
+                "venues": [{
+                    "id": 12,
+                    "name": "Arrowhead Stadium",
+                    "city": "Kansas City",
+                    "state": "MO",
+                    "country": "",
+                    "capacity": 76757
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/12"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/12/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/12/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/kc/kansas-city-chiefs?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=12&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 13,
+                "uid": "s:20~l:28~t:13",
+                "location": "Oakland",
+                "name": "Raiders",
+                "nickname": "Oakland",
+                "abbreviation": "OAK",
+                "color": "000000",
+                "venues": [{
+                    "id": 34,
+                    "name": "O.co Coliseum",
+                    "city": "Oakland",
+                    "state": "CA",
+                    "country": "",
+                    "capacity": 63026
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/13"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/13/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/13/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/oak/oakland-raiders?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=13&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 14,
+                "uid": "s:20~l:28~t:14",
+                "location": "St. Louis",
+                "name": "Rams",
+                "nickname": "St. Louis",
+                "abbreviation": "STL",
+                "color": "00295B",
+                "venues": [{
+                    "id": 37,
+                    "name": "Edward Jones Dome",
+                    "city": "St. Louis",
+                    "state": "MO",
+                    "country": "",
+                    "capacity": 65321
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/14"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/14/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/14/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/stl/st-louis-rams?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=14&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 15,
+                "uid": "s:20~l:28~t:15",
+                "location": "Miami",
+                "name": "Dolphins",
+                "nickname": "Miami",
+                "abbreviation": "MIA",
+                "color": "006B79",
+                "venues": [{
+                    "id": 15,
+                    "name": "Sun Life Stadium",
+                    "city": "Miami",
+                    "state": "FL",
+                    "country": "",
+                    "capacity": 75192
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/15"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/15/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/15/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/mia/miami-dolphins?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=15&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 16,
+                "uid": "s:20~l:28~t:16",
+                "location": "Minnesota",
+                "name": "Vikings",
+                "nickname": "Minnesota",
+                "abbreviation": "MIN",
+                "color": "240A67",
+                "venues": [{
+                    "id": 16,
+                    "name": "Mall of America Field",
+                    "city": "Minneapolis",
+                    "state": "MN",
+                    "country": "",
+                    "capacity": 64121
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/16"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/16/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/16/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/min/minnesota-vikings?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=16&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 17,
+                "uid": "s:20~l:28~t:17",
+                "location": "New England",
+                "name": "Patriots",
+                "nickname": "NE",
+                "abbreviation": "NE",
+                "color": "02244A",
+                "venues": [{
+                    "id": 53,
+                    "name": "Gillette Stadium",
+                    "city": "Foxboro",
+                    "state": "MA",
+                    "country": "",
+                    "capacity": 68756
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/17"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/17/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/17/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/ne/new-england-patriots?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=17&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 18,
+                "uid": "s:20~l:28~t:18",
+                "location": "New Orleans",
+                "name": "Saints",
+                "nickname": "NO",
+                "abbreviation": "NO",
+                "color": "020202",
+                "venues": [{
+                    "id": 18,
+                    "name": "Mercedes-Benz Superdome",
+                    "city": "New Orleans",
+                    "state": "LA",
+                    "country": "",
+                    "capacity": 72968
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/18"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/18/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/18/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/no/new-orleans-saints?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=18&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 19,
+                "uid": "s:20~l:28~t:19",
+                "location": "New York",
+                "name": "Giants",
+                "nickname": "Giants",
+                "abbreviation": "NYG",
+                "color": "052570",
+                "venues": [{
+                    "id": 121,
+                    "name": "MetLife Stadium",
+                    "city": "East Rutherford",
+                    "state": "NJ",
+                    "country": "",
+                    "capacity": 82500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/19"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/19/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/19/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/nyg/new-york-giants?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=19&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 20,
+                "uid": "s:20~l:28~t:20",
+                "location": "New York",
+                "name": "Jets",
+                "nickname": "Jets",
+                "abbreviation": "NYJ",
+                "color": "174032",
+                "venues": [{
+                    "id": 121,
+                    "name": "MetLife Stadium",
+                    "city": "East Rutherford",
+                    "state": "NJ",
+                    "country": "",
+                    "capacity": 82500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/20"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/20/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/20/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/nyj/new-york-jets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=20&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 21,
+                "uid": "s:20~l:28~t:21",
+                "location": "Philadelphia",
+                "name": "Eagles",
+                "nickname": "Philly",
+                "abbreviation": "PHI",
+                "color": "06424D",
+                "venues": [{
+                    "id": 58,
+                    "name": "Lincoln Financial Field",
+                    "city": "Philadelphia",
+                    "state": "PA",
+                    "country": "",
+                    "capacity": 67594
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/21"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/21/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/21/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/phi/philadelphia-eagles?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=21&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 22,
+                "uid": "s:20~l:28~t:22",
+                "location": "Arizona",
+                "name": "Cardinals",
+                "nickname": "Arizona",
+                "abbreviation": "ARI",
+                "color": "A40227",
+                "venues": [{
+                    "id": 63,
+                    "name": "U of Phoenix Stadium",
+                    "city": "Glendale",
+                    "state": "AZ",
+                    "country": "",
+                    "capacity": 63400
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/22"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/22/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/22/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/ari/arizona-cardinals?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=22&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 23,
+                "uid": "s:20~l:28~t:23",
+                "location": "Pittsburgh",
+                "name": "Steelers",
+                "nickname": "Pittsburgh",
+                "abbreviation": "PIT",
+                "color": "000000",
+                "venues": [{
+                    "id": 51,
+                    "name": "Heinz Field",
+                    "city": "Pittsburgh",
+                    "state": "PA",
+                    "country": "",
+                    "capacity": 65000
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/23"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/23/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/23/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/pit/pittsburgh-steelers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=23&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 24,
+                "uid": "s:20~l:28~t:24",
+                "location": "San Diego",
+                "name": "Chargers",
+                "nickname": "San Diego",
+                "abbreviation": "SD",
+                "color": "042453",
+                "venues": [{
+                    "id": 23,
+                    "name": "Qualcomm Stadium",
+                    "city": "San Diego",
+                    "state": "CA",
+                    "country": "",
+                    "capacity": 71294
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/24"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/24/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/24/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/sd/san-diego-chargers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=24&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 25,
+                "uid": "s:20~l:28~t:25",
+                "location": "San Francisco",
+                "name": "49ers",
+                "nickname": "SF",
+                "abbreviation": "SF",
+                "color": "981324",
+                "venues": [{
+                    "id": 68,
+                    "name": "Candlestick Park",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "country": "",
+                    "capacity": 70207
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/25"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/25/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/25/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/sf/san-francisco-49ers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=25&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 26,
+                "uid": "s:20~l:28~t:26",
+                "location": "Seattle",
+                "name": "Seahawks",
+                "nickname": "Seattle",
+                "abbreviation": "SEA",
+                "color": "224970",
+                "venues": [{
+                    "id": 56,
+                    "name": "CenturyLink Field",
+                    "city": "Seattle",
+                    "state": "WA",
+                    "country": "",
+                    "capacity": 67000
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/26"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/26/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/26/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/sea/seattle-seahawks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=26&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 27,
+                "uid": "s:20~l:28~t:27",
+                "location": "Tampa Bay",
+                "name": "Buccaneers",
+                "nickname": "Tampa Bay",
+                "abbreviation": "TB",
+                "color": "A80D08",
+                "venues": [{
+                    "id": 43,
+                    "name": "Raymond James Stadium",
+                    "city": "Tampa",
+                    "state": "FL",
+                    "country": "",
+                    "capacity": 65647
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/27"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/27/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/27/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/tb/tampa-bay-buccaneers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=27&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 28,
+                "uid": "s:20~l:28~t:28",
+                "location": "Washington",
+                "name": "Redskins",
+                "nickname": "Washington",
+                "abbreviation": "WSH",
+                "color": "650415",
+                "venues": [{
+                    "id": 40,
+                    "name": "FedEx Field",
+                    "city": "Landover",
+                    "state": "MD",
+                    "country": "",
+                    "capacity": 91704
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/28"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/28/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/28/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/wsh/washington-redskins?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=28&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 29,
+                "uid": "s:20~l:28~t:29",
+                "location": "Carolina",
+                "name": "Panthers",
+                "nickname": "Carolina",
+                "abbreviation": "CAR",
+                "color": "2177B0",
+                "venues": [{
+                    "id": 33,
+                    "name": "Bank of America Stadium",
+                    "city": "Charlotte",
+                    "state": "NC",
+                    "country": "",
+                    "capacity": 73778
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/29"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/29/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/29/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/car/carolina-panthers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=29&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 30,
+                "uid": "s:20~l:28~t:30",
+                "location": "Jacksonville",
+                "name": "Jaguars",
+                "nickname": "Jax",
+                "abbreviation": "JAX",
+                "color": "00839C",
+                "venues": [{
+                    "id": 35,
+                    "name": "EverBank Field",
+                    "city": "Jacksonville",
+                    "state": "FL",
+                    "country": "",
+                    "capacity": 67164
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/30"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/30/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/30/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/jax/jacksonville-jaguars?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=30&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 33,
+                "uid": "s:20~l:28~t:33",
+                "location": "Baltimore",
+                "name": "Ravens",
+                "nickname": "Baltimore",
+                "abbreviation": "BAL",
+                "color": "2B025B",
+                "venues": [{
+                    "id": 42,
+                    "name": "M&T Bank Stadium",
+                    "city": "Baltimore",
+                    "state": "MD",
+                    "country": "",
+                    "capacity": 71008
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/33"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/33/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/33/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/bal/baltimore-ravens?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=33&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 34,
+                "uid": "s:20~l:28~t:34",
+                "location": "Houston",
+                "name": "Texans",
+                "nickname": "Houston",
+                "abbreviation": "HOU",
+                "color": "00133F",
+                "venues": [{
+                    "id": 52,
+                    "name": "Reliant Stadium",
+                    "city": "Houston",
+                    "state": "TX",
+                    "country": "",
+                    "capacity": 71054
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/34"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/34/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/football/nfl/teams/34/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nfl/team/_/name/hou/houston-texans?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nfl/clubhouse?teamId=34&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }],
+            
+	"NBA": [{
+                "id": 1,
+                "uid": "s:40~l:46~t:1",
+                "location": "Atlanta",
+                "name": "Hawks",
+                "abbreviation": "ATL",
+                "color": "002B5C",
+                "venues": [{
+                    "id": 1827,
+                    "name": "Philips Arena",
+                    "city": "Atlanta",
+                    "state": "GA",
+                    "country": "",
+                    "capacity": 18729
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/1"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/1/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/1/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/atl/atlanta-hawks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=1&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 2,
+                "uid": "s:40~l:46~t:2",
+                "location": "Boston",
+                "name": "Celtics",
+                "abbreviation": "BOS",
+                "color": "006532",
+                "venues": [{
+                    "id": 1824,
+                    "name": "TD Garden",
+                    "city": "Boston",
+                    "state": "MA",
+                    "country": "",
+                    "capacity": 18624
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/2"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/2/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/2/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/bos/boston-celtics?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=2&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 3,
+                "uid": "s:40~l:46~t:3",
+                "location": "New Orleans",
+                "name": "Pelicans",
+                "abbreviation": "NO",
+                "color": "002a5c",
+                "venues": [{
+                    "id": 985,
+                    "name": "Smoothie King Center",
+                    "city": "New Orleans",
+                    "state": "LA",
+                    "country": "",
+                    "capacity": 17188
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/3"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/3/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/3/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/no/new-orleans-pelicans?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=3&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 4,
+                "uid": "s:40~l:46~t:4",
+                "location": "Chicago",
+                "name": "Bulls",
+                "abbreviation": "CHI",
+                "color": "000000",
+                "venues": [{
+                    "id": 1847,
+                    "name": "United Center",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "country": "",
+                    "capacity": 20917
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/4"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/4/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/4/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/chi/chicago-bulls?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=4&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 5,
+                "uid": "s:40~l:46~t:5",
+                "location": "Cleveland",
+                "name": "Cavaliers",
+                "abbreviation": "CLE",
+                "color": "061642",
+                "venues": [{
+                    "id": 3417,
+                    "name": "Quicken Loans Arena",
+                    "city": "Cleveland",
+                    "state": "OH",
+                    "country": "",
+                    "capacity": 20562
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/5"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/5/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/5/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/cle/cleveland-cavaliers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=5&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 6,
+                "uid": "s:40~l:46~t:6",
+                "location": "Dallas",
+                "name": "Mavericks",
+                "abbreviation": "DAL",
+                "color": "0C479D",
+                "venues": [{
+                    "id": 516,
+                    "name": "American Airlines Center",
+                    "city": "Dallas",
+                    "state": "TX",
+                    "country": "",
+                    "capacity": 19200
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/6"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/6/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/6/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/dal/dallas-mavericks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=6&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 7,
+                "uid": "s:40~l:46~t:7",
+                "location": "Denver",
+                "name": "Nuggets",
+                "abbreviation": "DEN",
+                "color": "0860A8",
+                "venues": [{
+                    "id": 892,
+                    "name": "Pepsi Center",
+                    "city": "Denver",
+                    "state": "CO",
+                    "country": "",
+                    "capacity": 19155
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/7"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/7/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/7/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/den/denver-nuggets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=7&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 8,
+                "uid": "s:40~l:46~t:8",
+                "location": "Detroit",
+                "name": "Pistons",
+                "abbreviation": "DET",
+                "color": "FA002C",
+                "venues": [{
+                    "id": 3419,
+                    "name": "The Palace of Auburn Hills",
+                    "city": "Detroit",
+                    "state": "MI",
+                    "country": "",
+                    "capacity": 22076
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/8"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/8/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/8/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/det/detroit-pistons?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=8&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 9,
+                "uid": "s:40~l:46~t:9",
+                "location": "Golden State",
+                "name": "Warriors",
+                "abbreviation": "GS",
+                "color": "00275D",
+                "venues": [{
+                    "id": 2465,
+                    "name": "ORACLE Arena",
+                    "city": "Oakland",
+                    "state": "CA",
+                    "country": "",
+                    "capacity": 19596
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/9"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/9/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/9/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/gs/golden-state-warriors?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=9&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 10,
+                "uid": "s:40~l:46~t:10",
+                "location": "Houston",
+                "name": "Rockets",
+                "abbreviation": "HOU",
+                "color": "D40026",
+                "venues": [{
+                    "id": 1394,
+                    "name": "Toyota Center",
+                    "city": "Houston",
+                    "state": "TX",
+                    "country": "",
+                    "capacity": 18104
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/10"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/10/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/10/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/hou/houston-rockets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=10&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 11,
+                "uid": "s:40~l:46~t:11",
+                "location": "Indiana",
+                "name": "Pacers",
+                "abbreviation": "IND",
+                "color": "061642",
+                "venues": [{
+                    "id": 2183,
+                    "name": "Bankers Life Fieldhouse",
+                    "city": "Indianapolis",
+                    "state": "IN",
+                    "country": "",
+                    "capacity": 18165
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/11"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/11/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/11/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/ind/indiana-pacers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=11&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 12,
+                "uid": "s:40~l:46~t:12",
+                "location": "Los Angeles",
+                "name": "Clippers",
+                "abbreviation": "LAC",
+                "color": "FA0028",
+                "venues": [{
+                    "id": 1841,
+                    "name": "STAPLES Center",
+                    "city": "Los Angeles",
+                    "state": "CA",
+                    "country": "",
+                    "capacity": 19060
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/12"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/12/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/12/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/lac/los-angeles-clippers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=12&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 13,
+                "uid": "s:40~l:46~t:13",
+                "location": "Los Angeles",
+                "name": "Lakers",
+                "abbreviation": "LAL",
+                "color": "542582",
+                "venues": [{
+                    "id": 1841,
+                    "name": "STAPLES Center",
+                    "city": "Los Angeles",
+                    "state": "CA",
+                    "country": "",
+                    "capacity": 19060
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/13"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/13/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/13/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/lal/los-angeles-lakers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=13&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 14,
+                "uid": "s:40~l:46~t:14",
+                "location": "Miami",
+                "name": "Heat",
+                "abbreviation": "MIA",
+                "color": "000000",
+                "venues": [{
+                    "id": 3438,
+                    "name": "AmericanAirlines Arena",
+                    "city": "Miami",
+                    "state": "FL",
+                    "country": "",
+                    "capacity": 19600
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/14"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/14/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/14/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/mia/miami-heat?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=14&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 15,
+                "uid": "s:40~l:46~t:15",
+                "location": "Milwaukee",
+                "name": "Bucks",
+                "abbreviation": "MIL",
+                "color": "003813",
+                "venues": [{
+                    "id": 2099,
+                    "name": "BMO Harris Bradley Center",
+                    "city": "Milwaukee",
+                    "state": "WI",
+                    "country": "",
+                    "capacity": 18717
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/15"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/15/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/15/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/mil/milwaukee-bucks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=15&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 16,
+                "uid": "s:40~l:46~t:16",
+                "location": "Minnesota",
+                "name": "Timberwolves",
+                "abbreviation": "MIN",
+                "color": "0E3764",
+                "venues": [{
+                    "id": 2029,
+                    "name": "Target Center",
+                    "city": "Minneapolis",
+                    "state": "MN",
+                    "country": "",
+                    "capacity": 19356
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/16"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/16/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/16/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/min/minnesota-timberwolves?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=16&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 17,
+                "uid": "s:40~l:46~t:17",
+                "location": "Brooklyn",
+                "name": "Nets",
+                "abbreviation": "BKN",
+                "color": "000000",
+                "venues": [{
+                    "id": 1826,
+                    "name": "Prudential Center",
+                    "city": "Newark",
+                    "state": "NJ",
+                    "country": "",
+                    "capacity": 18500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/17"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/17/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/17/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/bkn/brooklyn-nets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=17&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 18,
+                "uid": "s:40~l:46~t:18",
+                "location": "New York",
+                "name": "Knicks",
+                "abbreviation": "NY",
+                "color": "225EA8",
+                "venues": [{
+                    "id": 1830,
+                    "name": "Madison Square Garden",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "",
+                    "capacity": 19763
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/18"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/18/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/18/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/ny/new-york-knicks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=18&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 19,
+                "uid": "s:40~l:46~t:19",
+                "location": "Orlando",
+                "name": "Magic",
+                "abbreviation": "ORL",
+                "color": "0860A8",
+                "venues": [{
+                    "id": 3432,
+                    "name": "Amway Center",
+                    "city": "Orlando",
+                    "state": "FL",
+                    "country": "",
+                    "capacity": 18500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/19"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/19/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/19/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/orl/orlando-magic?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=19&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 20,
+                "uid": "s:40~l:46~t:20",
+                "location": "Philadelphia",
+                "name": "76ers",
+                "abbreviation": "PHI",
+                "color": "000000",
+                "venues": [{
+                    "id": 1845,
+                    "name": "Wells Fargo Center",
+                    "city": "Philadelphia",
+                    "state": "PA",
+                    "country": "",
+                    "capacity": 20318
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/20"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/20/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/20/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/phi/philadelphia-76ers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=20&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 21,
+                "uid": "s:40~l:46~t:21",
+                "location": "Phoenix",
+                "name": "Suns",
+                "abbreviation": "PHX",
+                "color": "23006A",
+                "venues": [{
+                    "id": 1949,
+                    "name": "US Airways Center",
+                    "city": "Phoenix",
+                    "state": "AZ",
+                    "country": "",
+                    "capacity": 18422
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/21"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/21/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/21/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/phx/phoenix-suns?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=21&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 22,
+                "uid": "s:40~l:46~t:22",
+                "location": "Portland",
+                "name": "Trail Blazers",
+                "abbreviation": "POR",
+                "color": "000000",
+                "venues": [{
+                    "id": 3423,
+                    "name": "Moda Center",
+                    "city": "Portland",
+                    "state": "OR",
+                    "country": "",
+                    "capacity": 19980
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/22"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/22/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/22/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/por/portland-trail-blazers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=22&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 23,
+                "uid": "s:40~l:46~t:23",
+                "location": "Sacramento",
+                "name": "Kings",
+                "abbreviation": "SAC",
+                "color": "393996",
+                "venues": [{
+                    "id": 2247,
+                    "name": "Sleep Train Arena",
+                    "city": "Sacramento",
+                    "state": "CA",
+                    "country": "",
+                    "capacity": 17317
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/23"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/23/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/23/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/sac/sacramento-kings?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=23&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 24,
+                "uid": "s:40~l:46~t:24",
+                "location": "San Antonio",
+                "name": "Spurs",
+                "abbreviation": "SA",
+                "color": "000000",
+                "venues": [{
+                    "id": 780,
+                    "name": "AT&T Center",
+                    "city": "San Antonio",
+                    "state": "TX",
+                    "country": "",
+                    "capacity": 18581
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/24"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/24/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/24/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/sa/san-antonio-spurs?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=24&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 25,
+                "uid": "s:40~l:46~t:25",
+                "location": "Oklahoma City",
+                "name": "Thunder",
+                "abbreviation": "OKC",
+                "color": "C67C03",
+                "venues": [{
+                    "id": 2559,
+                    "name": "Chesapeake Energy Arena",
+                    "city": "Oklahoma City",
+                    "state": "OK",
+                    "country": "",
+                    "capacity": 18203
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/25"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/25/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/25/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/okc/oklahoma-city-thunder?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=25&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 26,
+                "uid": "s:40~l:46~t:26",
+                "location": "Utah",
+                "name": "Jazz",
+                "abbreviation": "UTAH",
+                "color": "06143F",
+                "venues": [{
+                    "id": 3093,
+                    "name": "EnergySolutions Arena",
+                    "city": "Salt Lake City",
+                    "state": "UT",
+                    "country": "",
+                    "capacity": 19911
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/26"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/26/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/26/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/utah/utah-jazz?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=26&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 27,
+                "uid": "s:40~l:46~t:27",
+                "location": "Washington",
+                "name": "Wizards",
+                "abbreviation": "WSH",
+                "color": "0E3764",
+                "venues": [{
+                    "id": 1823,
+                    "name": "Verizon Center",
+                    "city": "Washington",
+                    "state": "DC",
+                    "country": "",
+                    "capacity": 20173
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/27"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/27/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/27/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/wsh/washington-wizards?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=27&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 28,
+                "uid": "s:40~l:46~t:28",
+                "location": "Toronto",
+                "name": "Raptors",
+                "abbreviation": "TOR",
+                "color": "CE0F41",
+                "venues": [{
+                    "id": 1838,
+                    "name": "Air Canada Centre",
+                    "city": "Toronto",
+                    "state": "ON",
+                    "country": "",
+                    "capacity": 19800
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/28"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/28/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/28/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/tor/toronto-raptors?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=28&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 29,
+                "uid": "s:40~l:46~t:29",
+                "location": "Memphis",
+                "name": "Grizzlies",
+                "abbreviation": "MEM",
+                "color": "5D76A8",
+                "venues": [{
+                    "id": 1392,
+                    "name": "FedExForum",
+                    "city": "Memphis",
+                    "state": "TN",
+                    "country": "",
+                    "capacity": 18119
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/29"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/29/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/29/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/mem/memphis-grizzlies?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=29&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 30,
+                "uid": "s:40~l:46~t:30",
+                "location": "Charlotte",
+                "name": "Bobcats",
+                "abbreviation": "CHA",
+                "color": "FE3310",
+                "venues": [{
+                    "id": 1893,
+                    "name": "Time Warner Cable Arena",
+                    "city": "Charlotte",
+                    "state": "NC",
+                    "country": "",
+                    "capacity": 19077
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/30"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/30/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/basketball/nba/teams/30/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nba/team/_/name/cha/charlotte-bobcats?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nba/clubhouse?teamId=30&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }],
+            
+    "NHL": [{
+                "id": 1,
+                "uid": "s:70~l:90~t:1",
+                "location": "Boston",
+                "name": "Bruins",
+                "abbreviation": "BOS",
+                "color": "000000",
+                "venues": [{
+                    "id": 42,
+                    "name": "TD Garden",
+                    "city": "Boston",
+                    "state": "MA",
+                    "country": "USA",
+                    "capacity": 17565
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/1"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/1/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/1/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/bos/boston-bruins?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=1&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 2,
+                "uid": "s:70~l:90~t:2",
+                "location": "Buffalo",
+                "name": "Sabres",
+                "abbreviation": "BUF",
+                "color": "003366",
+                "venues": [{
+                    "id": 48,
+                    "name": "First Niagara Center",
+                    "city": "Buffalo",
+                    "state": "NY",
+                    "country": "USA",
+                    "capacity": 18690
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/2"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/2/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/2/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/buf/buffalo-sabres?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=2&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 3,
+                "uid": "s:70~l:90~t:3",
+                "location": "Calgary",
+                "name": "Flames",
+                "abbreviation": "CGY",
+                "color": "E2373F",
+                "venues": [{
+                    "id": 3,
+                    "name": "Scotiabank Saddledome",
+                    "city": "Calgary",
+                    "state": "AB",
+                    "country": "Canada",
+                    "capacity": 19289
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/3"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/3/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/3/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/cgy/calgary-flames?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=3&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 4,
+                "uid": "s:70~l:90~t:4",
+                "location": "Chicago",
+                "name": "Blackhawks",
+                "abbreviation": "CHI",
+                "color": "E2373F",
+                "venues": [{
+                    "id": 36,
+                    "name": "United Center",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "country": "USA",
+                    "capacity": 19717
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/4"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/4/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/4/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/chi/chicago-blackhawks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=4&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 5,
+                "uid": "s:70~l:90~t:5",
+                "location": "Detroit",
+                "name": "Red Wings",
+                "abbreviation": "DET",
+                "color": "ED171F",
+                "venues": [{
+                    "id": 5,
+                    "name": "Joe Louis Arena",
+                    "city": "Detroit",
+                    "state": "MI",
+                    "country": "USA",
+                    "capacity": 20066
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/5"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/5/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/5/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/det/detroit-red-wings?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=5&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 6,
+                "uid": "s:70~l:90~t:6",
+                "location": "Edmonton",
+                "name": "Oilers",
+                "abbreviation": "EDM",
+                "color": "06143F",
+                "venues": [{
+                    "id": 6,
+                    "name": "Rexall Place",
+                    "city": "Edmonton",
+                    "state": "AB",
+                    "country": "Canada",
+                    "capacity": 16839
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/6"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/6/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/6/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/edm/edmonton-oilers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=6&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 7,
+                "uid": "s:70~l:90~t:7",
+                "location": "Carolina",
+                "name": "Hurricanes",
+                "abbreviation": "CAR",
+                "color": "D72D35",
+                "venues": [{
+                    "id": 63,
+                    "name": "PNC Arena",
+                    "city": "Raleigh",
+                    "state": "NC",
+                    "country": "USA",
+                    "capacity": 18730
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/7"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/7/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/7/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/car/carolina-hurricanes?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=7&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 8,
+                "uid": "s:70~l:90~t:8",
+                "location": "Los Angeles",
+                "name": "Kings",
+                "abbreviation": "LA",
+                "color": "000000",
+                "venues": [{
+                    "id": 65,
+                    "name": "STAPLES Center",
+                    "city": "Los Angeles",
+                    "state": "CA",
+                    "country": "USA",
+                    "capacity": 18118
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/8"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/8/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/8/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/la/los-angeles-kings?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=8&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 9,
+                "uid": "s:70~l:90~t:9",
+                "location": "Dallas",
+                "name": "Stars",
+                "abbreviation": "DAL",
+                "color": "003921",
+                "venues": [{
+                    "id": 74,
+                    "name": "American Airlines Center",
+                    "city": "Dallas",
+                    "state": "TX",
+                    "country": "USA",
+                    "capacity": 18532
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/9"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/9/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/9/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/dal/dallas-stars?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=9&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 10,
+                "uid": "s:70~l:90~t:10",
+                "location": "Montreal",
+                "name": "Canadiens",
+                "abbreviation": "MTL",
+                "color": "C1131E",
+                "venues": [{
+                    "id": 44,
+                    "name": "Bell Centre",
+                    "city": "Montreal",
+                    "state": "PQ",
+                    "country": "Canada",
+                    "capacity": 21273
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/10"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/10/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/10/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/mtl/montreal-canadiens?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=10&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 11,
+                "uid": "s:70~l:90~t:11",
+                "location": "New Jersey",
+                "name": "Devils",
+                "abbreviation": "NJ",
+                "color": "ED171F",
+                "venues": [{
+                    "id": 11,
+                    "name": "IZOD Center",
+                    "city": "East Rutherford",
+                    "state": "NJ",
+                    "country": "USA",
+                    "capacity": 19040
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/11"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/11/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/11/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/nj/new-jersey-devils?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=11&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 12,
+                "uid": "s:70~l:90~t:12",
+                "location": "New York",
+                "name": "Islanders",
+                "abbreviation": "NYI",
+                "color": "06143F",
+                "venues": [{
+                    "id": 12,
+                    "name": "Nassau Veterans Memorial Coliseum",
+                    "city": "Uniondale",
+                    "state": "NY",
+                    "country": "USA",
+                    "capacity": 16297
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/12"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/12/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/12/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/nyi/new-york-islanders?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=12&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 13,
+                "uid": "s:70~l:90~t:13",
+                "location": "New York",
+                "name": "Rangers",
+                "abbreviation": "NYR",
+                "color": "0B3D91",
+                "venues": [{
+                    "id": 13,
+                    "name": "Madison Square Garden",
+                    "city": "New York",
+                    "state": "NY",
+                    "country": "USA",
+                    "capacity": 18006
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/13"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/13/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/13/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/nyr/new-york-rangers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=13&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 14,
+                "uid": "s:70~l:90~t:14",
+                "location": "Ottawa",
+                "name": "Senators",
+                "abbreviation": "OTT",
+                "color": "000000",
+                "venues": [{
+                    "id": 41,
+                    "name": "Canadian Tire Centre",
+                    "city": "Ottawa",
+                    "state": "ON",
+                    "country": "Canada",
+                    "capacity": 18500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/14"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/14/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/14/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/ott/ottawa-senators?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=14&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 15,
+                "uid": "s:70~l:90~t:15",
+                "location": "Philadelphia",
+                "name": "Flyers",
+                "abbreviation": "PHI",
+                "color": "FD5A1E",
+                "venues": [{
+                    "id": 47,
+                    "name": "Wells Fargo Center",
+                    "city": "Philadelphia",
+                    "state": "PA",
+                    "country": "USA",
+                    "capacity": 19500
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/15"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/15/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/15/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/phi/philadelphia-flyers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=15&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 16,
+                "uid": "s:70~l:90~t:16",
+                "location": "Pittsburgh",
+                "name": "Penguins",
+                "abbreviation": "PIT",
+                "color": "C3B263",
+                "venues": [{
+                    "id": 16,
+                    "name": "Mellon Arena",
+                    "city": "Pittsburgh",
+                    "state": "PA",
+                    "country": "USA",
+                    "capacity": 16958
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/16"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/16/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/16/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/pit/pittsburgh-penguins?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=16&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 17,
+                "uid": "s:70~l:90~t:17",
+                "location": "Colorado",
+                "name": "Avalanche",
+                "abbreviation": "COL",
+                "color": "AB2842",
+                "venues": [{
+                    "id": 64,
+                    "name": "Pepsi Center",
+                    "city": "Denver",
+                    "state": "CO",
+                    "country": "USA",
+                    "capacity": 18007
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/17"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/17/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/17/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/col/colorado-avalanche?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=17&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 18,
+                "uid": "s:70~l:90~t:18",
+                "location": "San Jose",
+                "name": "Sharks",
+                "abbreviation": "SJ",
+                "color": "00535E",
+                "venues": [{
+                    "id": 18,
+                    "name": "SAP Center",
+                    "city": "San Jose",
+                    "state": "CA",
+                    "country": "USA",
+                    "capacity": 17496
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/18"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/18/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/18/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/sj/san-jose-sharks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=18&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 19,
+                "uid": "s:70~l:90~t:19",
+                "location": "St. Louis",
+                "name": "Blues",
+                "abbreviation": "STL",
+                "color": "0C2D83",
+                "venues": [{
+                    "id": 35,
+                    "name": "Scottrade Center",
+                    "city": "Saint Louis",
+                    "state": "MO",
+                    "country": "USA",
+                    "capacity": 19150
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/19"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/19/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/19/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/stl/st-louis-blues?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=19&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 20,
+                "uid": "s:70~l:90~t:20",
+                "location": "Tampa Bay",
+                "name": "Lightning",
+                "abbreviation": "TB",
+                "color": "857C7A",
+                "venues": [{
+                    "id": 46,
+                    "name": "Tampa Bay Times Forum",
+                    "city": "Tampa",
+                    "state": "FL",
+                    "country": "USA",
+                    "capacity": 19758
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/20"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/20/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/20/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/tb/tampa-bay-lightning?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=20&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 21,
+                "uid": "s:70~l:90~t:21",
+                "location": "Toronto",
+                "name": "Maple Leafs",
+                "abbreviation": "TOR",
+                "color": "091C5A",
+                "venues": [{
+                    "id": 60,
+                    "name": "Air Canada Centre",
+                    "city": "Toronto",
+                    "state": "ON",
+                    "country": "Canada",
+                    "capacity": 18800
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/21"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/21/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/21/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/tor/toronto-maple-leafs?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=21&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 22,
+                "uid": "s:70~l:90~t:22",
+                "location": "Vancouver",
+                "name": "Canucks",
+                "abbreviation": "VAN",
+                "color": "021A33",
+                "venues": [{
+                    "id": 43,
+                    "name": "Rogers Arena",
+                    "city": "Vancouver",
+                    "state": "BC",
+                    "country": "Canada",
+                    "capacity": 18810
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/22"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/22/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/22/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/van/vancouver-canucks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=22&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 23,
+                "uid": "s:70~l:90~t:23",
+                "location": "Washington",
+                "name": "Capitals",
+                "abbreviation": "WSH",
+                "color": "002d62",
+                "venues": [{
+                    "id": 57,
+                    "name": "Verizon Center",
+                    "city": "Washington",
+                    "state": "DC",
+                    "country": "USA",
+                    "capacity": 18398
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/23"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/23/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/23/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/wsh/washington-capitals?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=23&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 24,
+                "uid": "s:70~l:90~t:24",
+                "location": "Phoenix",
+                "name": "Coyotes",
+                "abbreviation": "PHX",
+                "color": "000000",
+                "venues": [{
+                    "id": 91,
+                    "name": "Jobing.com Arena",
+                    "city": "Glendale",
+                    "state": "AZ",
+                    "country": "USA",
+                    "capacity": 17125
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/24"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/24/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/24/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/phx/phoenix-coyotes?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=24&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 25,
+                "uid": "s:70~l:90~t:25",
+                "location": "Anaheim",
+                "name": "Ducks",
+                "abbreviation": "ANA",
+                "color": "000000",
+                "venues": [{
+                    "id": 25,
+                    "name": "Honda Center",
+                    "city": "Anaheim",
+                    "state": "CA",
+                    "country": "USA",
+                    "capacity": 17174
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/25"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/25/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/25/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/ana/anaheim-ducks?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=25&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 26,
+                "uid": "s:70~l:90~t:26",
+                "location": "Florida",
+                "name": "Panthers",
+                "abbreviation": "FLA",
+                "color": "ED171F",
+                "venues": [{
+                    "id": 61,
+                    "name": "BB&T Center",
+                    "city": "Sunrise",
+                    "state": "FL",
+                    "country": "USA",
+                    "capacity": 19250
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/26"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/26/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/26/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/fla/florida-panthers?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=26&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 27,
+                "uid": "s:70~l:90~t:27",
+                "location": "Nashville",
+                "name": "Predators",
+                "abbreviation": "NSH",
+                "color": "06143F",
+                "venues": [{
+                    "id": 59,
+                    "name": "Bridgestone Arena",
+                    "city": "Nashville",
+                    "state": "TN",
+                    "country": "USA",
+                    "capacity": 17113
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/27"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/27/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/27/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/nsh/nashville-predators?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=27&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 28,
+                "uid": "s:70~l:90~t:28",
+                "location": "Winnipeg",
+                "name": "Jets",
+                "abbreviation": "WPG",
+                "color": "00265D",
+                "venues": [{
+                    "id": 62,
+                    "name": "Philips Arena",
+                    "city": "Atlanta",
+                    "state": "GA",
+                    "country": "USA",
+                    "capacity": 18545
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/28"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/28/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/28/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/wpg/winnipeg-jets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=28&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 29,
+                "uid": "s:70~l:90~t:29",
+                "location": "Columbus",
+                "name": "Blue Jackets",
+                "abbreviation": "CBJ",
+                "color": "002d62",
+                "venues": [{
+                    "id": 66,
+                    "name": "Nationwide Arena",
+                    "city": "Columbus",
+                    "state": "OH",
+                    "country": "USA",
+                    "capacity": 18136
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/29"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/29/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/29/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/cbj/columbus-blue-jackets?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=29&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }, {
+                "id": 30,
+                "uid": "s:70~l:90~t:30",
+                "location": "Minnesota",
+                "name": "Wild",
+                "abbreviation": "MIN",
+                "color": "003822",
+                "venues": [{
+                    "id": 67,
+                    "name": "Xcel Energy Center",
+                    "city": "Saint Paul",
+                    "state": "MN",
+                    "country": "USA",
+                    "capacity": 18064
+                }],
+                "links": {
+                    "api": {
+                        "teams": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/30"
+                        },
+                        "news": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/30/news"
+                        },
+                        "notes": {
+                            "href": "http://api.espn.com/v1/sports/hockey/nhl/teams/30/news/notes"
+                        }
+                    },
+                    "web": {
+                        "teams": {
+                            "href": "http://espn.go.com/nhl/team/_/name/min/minnesota-wild?ex_cid=espnapi_public"
+                        }
+                    },
+                    "mobile": {
+                        "teams": {
+                            "href": "http://m.espn.go.com/nhl/clubhouse?teamId=30&ex_cid=espnapi_public"
+                        }
+                    }
+                }
+            }]
+}
+    

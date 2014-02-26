@@ -30,9 +30,49 @@
 <body>
 
 	<div data-role="page" id="home">
+		<header data-role="header" data-position="fixed">
+			<h1>Sport Profile</h1>
+		</header>
+		<section data-role="content">
+			<a href="#account" data-role="button" id="createButton">Create New Account</a>
+		</section>
 		
 	</div>
-	
+	<div data-role="page" id="account">
+		<header data-role="header" data-position="fixed">
+			<h1>New Account</h1>
+		</header>
+		<section data-role="content">
+			<form action="" method="post" id="addaccount">
+				<section data-role="fieldcontain">
+					<label for="firstname">First Name:</label>
+					<input type="text" name="firstname" id="firstname"/>
+				</section>
+				<section data-role="fieldcontain">
+					<label for="lastname">Last Name:</label>
+					<input type="text" name="lastname" id="lastname"/>
+				</section>
+				<section data-role="fieldcontain">
+					<label for="age">Age:</label>
+					<input type="text" name="age" id="age"/>
+				</section>
+				<section data-role="fieldcontain">
+					<label for="sport">Sport:</label>
+					<select name="sport" id="sport">
+						<option data-placeholder="true">*Please Select Sport*</option>
+						<option value="NFL">NFL</option>
+						<option value="MLB">MLB</option>
+						<option value="NBA">NBA</option>
+						<option value="NHL">NHL</option>
+					</select>
+				</section>
+				<section data-role="fieldcontain">
+					<label for="team">Team:</label>
+					<select name="team" id="team">
+					</select>
+			</form>
+		</section>
+	</div>
 	
 	
 	<!-- JavaScript under here -->
