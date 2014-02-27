@@ -34,6 +34,17 @@
 			<h1>Sport Profile</h1>
 		</header>
 		<section data-role="content">
+			<section data-role="fieldcontain">
+				<label for="enterEmail">Email:</label>
+				<input type="text" name="enterEmail" id="enterEmail"/>
+			</section>
+			<section data-role="fieldcontain">
+				<label for="enterPassword">Password:</label>
+				<input type="text" name="enterPassword" id="enterPassword"/>
+			</section>
+			<section data-role="fieldcontain">
+					<a href="#" data-role="button" id="login">Login</a>
+			</section>
 			<a href="#account" data-role="button" id="createButton">Create New Account</a>
 		</section>
 		
@@ -53,8 +64,12 @@
 					<input type="text" name="lastname" id="lastname"/>
 				</section>
 				<section data-role="fieldcontain">
-					<label for="age">Age:</label>
-					<input type="text" name="age" id="age"/>
+					<label for="email">Email:</label>
+					<input type="text" name="email" id="email"/>
+				</section>
+				<section data-role="fieldcontain">
+					<label for="password">Password:</label>
+					<input type="text" name="password" id="password"/>
 				</section>
 				<section data-role="fieldcontain">
 					<label for="sport">Sport:</label>
@@ -70,6 +85,10 @@
 					<label for="team">Team:</label>
 					<select name="team" id="team">
 					</select>
+				</section>
+				<section data-role="fieldcontain">
+					<a href="#" data-role="button" id="submit">Submit</a>
+				</section>
 			</form>
 		</section>
 	</div>
