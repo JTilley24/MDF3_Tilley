@@ -1,13 +1,17 @@
 $("#home").on("pageinit", function(){
 	$("#login").on("click", function(){
-		var email = $("#enterEmail").val();
+		var user = $("#enterUser").val();
 		var password = $("#enterPassword").val();
-		webview.hasEmail(email);
-		var check = webview.hasEmail(email);
+		webview.hasUser(user);
+		var check = webview.hasUser(user);
 		webview.getString(check.toString());
 		if(check.toString() == "true"){
 			webview.getBoolean(check);
-			webview.hasPassword(email, password);
+			var passcheck = webview.hasPassword(user, password);
+			webview.getBoolean(passcheck);
+			if(passcheck.toString() == "true"){
+				webview.openProfile(user);
+			}
 		}
 		
 	});
@@ -27,14 +31,21 @@ $("#account").on("pageinit", function(){
 	});
 	
 	$("#submit").on("click", function(){
-		saveData();	
+		validate();
+		if(validate() == true){
+			saveData();
+			$.mobile.navigate("#home");
+			$("#enterUser").val($("#user").val());
+		}
 	})
 	
 	$("#camera").on("click", function(){
 		webview.getCamera();
 		var timeout = 10;
 		var timer = setInterval(function(){
-			if(timeout > 0){
+			if(timeout == 0){
+				clearInterval(timer);
+			}else{
 				var cameraCheck = webview.hasImage();
 				webview.getString(cameraCheck.toString());
 				if(cameraCheck.toString() == "true"){
@@ -43,8 +54,6 @@ $("#account").on("pageinit", function(){
 					clearInterval(timer);
 				}
 				timeout--;
-			}else{
-				clearInterval(timer);
 			}
 		}, 3000);
 	})
@@ -52,6 +61,7 @@ $("#account").on("pageinit", function(){
 });
 
 var jsonData;
+var picPath = "images/profile.png";
 
 var loadData = function(sport){
 	
@@ -77,7 +87,7 @@ var loadData = function(sport){
 
 var displayImage = function(){
 	var path = webview.getImage();
-	webview.getString(path.toString());
+	picPath = path;
 	$("#pic").empty();
 	var profilepic = $("<img src='"+ path + "' id='#profilepic' width='50' height='50'/>")
 	profilepic.appendTo("#pic");
@@ -101,12 +111,50 @@ var saveData = function(){
 	item = {};
 	item["firstname"] = $("#firstname").val();
 	item["lastname"] = $("#lastname").val();
-	item["email"] = $("#email").val();
+	item["user"] = $("#user").val();
 	item["password"] = $("#password").val();
 	item["sport"] = $("#sport").val();
 	item["team"] = jsonData[$("#team").val()];
+	item["picture"] = picPath;
 	jsonObj.push(item);
 	console.log(jsonObj);
 	webview.getString(JSON.stringify(jsonObj));
 	webview.getAccount(JSON.stringify(jsonObj));
+}
+
+var validate = function (){
+	var val = 0;
+	$("#valList").empty();
+	webview.getString($("#firstname").val().toString());
+	if($("#firstname").val() == null || $("#firstname").val() == ""){
+		webview.getString($("#firstname").val());
+		var fname = $("<li>Please enter First Name.</li>");
+		fname.appendTo($("#valList"));
+		val++;
+	}
+	if($("#lastname").val() == null || $("#lastname").val() == ""){
+		var lname = $("<li>Please enter Last Name.</li>");
+		lname.appendTo($("#valList"));
+		val++;	
+	}
+	if($("#user").val() == null || $("#user").val() == ""){
+		var uname = $("<li>Please enter Username.</li>");
+		uname.appendTo($("#valList"));
+		val++;	
+	}
+	if($("#password").val() == null || $("#password").val() == ""){
+		var pass = $("<li>Please enter Password.</li>");
+		pass.appendTo($("#valList"));
+		val++;	
+	}
+	if($("#sport").val() == "*Please Select Sport*"){
+		var sname = $("<li>Please Select Sport.</li>");
+		sname.appendTo($("#valList"));
+		val++;	
+	}
+	if(val > 0){
+		return false;
+	}
+	
+	return true;
 }

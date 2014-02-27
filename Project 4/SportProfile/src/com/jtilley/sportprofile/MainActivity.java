@@ -126,6 +126,13 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 		@JavascriptInterface
+		public void openProfile(String user){
+			Intent intent = new Intent(mContext, ProfileActivity.class);
+			intent.putExtra("user", user);
+			startActivity(intent);
+		}
+		
+		@JavascriptInterface
 		public void getAccount(String account){
 			//Log.i("ACCOUNT", account);
 			try {
@@ -133,8 +140,16 @@ private static final int CAMERA_REQUEST = 1888;
 				JSONObject jsonObj = jsonArray.getJSONObject(0);
 				SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
 				SharedPreferences.Editor editPrefs = prefs.edit();
-				editPrefs.putString(jsonObj.getString("email"), jsonObj.toString());
-				editPrefs.commit();
+				String user = prefs.getString("user", null);
+				if(user != null){
+					String newUser = user + ", " +  jsonObj.toString();
+					editPrefs.putString(jsonObj.getString("user"), newUser);
+					editPrefs.commit();
+				}else{
+					editPrefs.putString(jsonObj.getString("user"), jsonObj.toString());
+					editPrefs.commit();	
+				}
+				
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -142,11 +157,11 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 		@JavascriptInterface
-		public Boolean hasEmail(String email){
+		public Boolean hasUser(String user){
 			SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
 			Map<String, ?> accounts = prefs.getAll();
 			for(int i=0; i<accounts.size();i++){
-				if(accounts.containsKey(email)){
+				if(accounts.containsKey(user)){
 					return true;
 				}
 			}
@@ -159,10 +174,10 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 		@JavascriptInterface
-		public Boolean hasPassword(String email, String password){
+		public Boolean hasPassword(String user, String password){
 			SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
-			String account = prefs.getString(email, null);
-			Log.i("EMAIL", "account");
+			String account = prefs.getString(user, null);
+			Log.i("USER", "account");
 			if(account != null){
 				try {
 					JSONObject jsonObject = new JSONObject(account);
