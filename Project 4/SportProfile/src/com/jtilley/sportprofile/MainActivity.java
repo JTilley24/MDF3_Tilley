@@ -1,6 +1,12 @@
 package com.jtilley.sportprofile;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Calendar;
 import java.util.Map;
 
 import org.json.JSONArray;
@@ -8,9 +14,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.Menu;
 import android.webkit.JavascriptInterface;
@@ -18,6 +28,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class MainActivity extends Activity {
+Bitmap profilePic;
+String filename;
+private static final int CAMERA_REQUEST = 1888;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +58,40 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	public void onActivityResult(int requestCode, int resultCode, Intent data){
+		if(resultCode == RESULT_OK){
+			if(requestCode == CAMERA_REQUEST){
+				profilePic = (Bitmap) data.getExtras().get("data");
+				saveImage();
+			}
+		}
+	}
+	
+	public void saveImage(){
+		File path = Environment.getExternalStoragePublicDirectory("/SportProfile/");
+		if(!path.exists()){
+			path.mkdir();
+		}
+		
+		filename = "profile" + String.valueOf(Calendar.getInstance().getTime().getTime()) + ".jpg";
+		
+		
+		File file = new File(path, filename);
+		try {
+			OutputStream fos = new FileOutputStream(file);
+			Bitmap bitmap = profilePic;
+			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+			fos.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public class WebAppInterface{
 		Context mContext;
 		
@@ -52,9 +99,30 @@ public class MainActivity extends Activity {
 			mContext = context;
 		}
 		
+
 		@JavascriptInterface
 		public void getString(String text){
 			Log.i("TEXT", text);
+		}
+		
+		@JavascriptInterface
+		public void getCamera(){
+			profilePic = null;
+			Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+			startActivityForResult(intent, CAMERA_REQUEST);
+		}
+		@JavascriptInterface
+		public Boolean hasImage(){
+			if(profilePic != null){
+				return true;
+			}
+			return false;
+		}
+		@JavascriptInterface
+		public String getImage(){
+			String path = "file:///sdcard/SportProfile/" + filename;
+			
+			return path;
 		}
 		
 		@JavascriptInterface
@@ -63,7 +131,6 @@ public class MainActivity extends Activity {
 			try {
 				JSONArray jsonArray = new JSONArray(account);
 				JSONObject jsonObj = jsonArray.getJSONObject(0);
-				//Log.i("ACCOUNT_NAME", jsonObj.getString("firstname"));
 				SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
 				SharedPreferences.Editor editPrefs = prefs.edit();
 				editPrefs.putString(jsonObj.getString("email"), jsonObj.toString());
@@ -74,6 +141,7 @@ public class MainActivity extends Activity {
 			}
 		}
 		
+		@JavascriptInterface
 		public Boolean hasEmail(String email){
 			SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
 			Map<String, ?> accounts = prefs.getAll();
@@ -85,10 +153,12 @@ public class MainActivity extends Activity {
 			return false;
 		}
 		
+		@JavascriptInterface
 		public void getBoolean(Boolean check){
 			Log.i("BOOLEAN", check.toString());
 		}
 		
+		@JavascriptInterface
 		public Boolean hasPassword(String email, String password){
 			SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
 			String account = prefs.getString(email, null);
@@ -108,18 +178,6 @@ public class MainActivity extends Activity {
 			}
 			return false;
 		}
-		
-		public void getLogin(String email, String password){
-			SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
-			Map<String, ?> accounts = prefs.getAll();
-			for(int i=0; i<accounts.size();i++){
-				if(accounts.containsKey(email)){
-					Log.i("ACCOUNT", accounts.get(email).toString());
-				}
-			}
-			//Log.i("LOGIN", email + " " + password);
-		}
+	
 	}
-	
-	
 }

@@ -2,11 +2,11 @@ $("#home").on("pageinit", function(){
 	$("#login").on("click", function(){
 		var email = $("#enterEmail").val();
 		var password = $("#enterPassword").val();
-		//webview.getLogin(email, password);
 		webview.hasEmail(email);
 		var check = webview.hasEmail(email);
-		webview.getBoolean(check);
-		if(check){
+		webview.getString(check.toString());
+		if(check.toString() == "true"){
+			webview.getBoolean(check);
 			webview.hasPassword(email, password);
 		}
 		
@@ -14,6 +14,8 @@ $("#home").on("pageinit", function(){
 });
 
 $("#account").on("pageinit", function(){
+	
+	
 	$("#sport").on("change", function(){
 		if($("#sport").val() == "*Please Select Sport*"){
 			$("#team").empty();
@@ -25,9 +27,26 @@ $("#account").on("pageinit", function(){
 	});
 	
 	$("#submit").on("click", function(){
-		
-		saveData();
-		
+		saveData();	
+	})
+	
+	$("#camera").on("click", function(){
+		webview.getCamera();
+		var timeout = 10;
+		var timer = setInterval(function(){
+			if(timeout > 0){
+				var cameraCheck = webview.hasImage();
+				webview.getString(cameraCheck.toString());
+				if(cameraCheck.toString() == "true"){
+					webview.getString("PICTURE");
+					displayImage();
+					clearInterval(timer);
+				}
+				timeout--;
+			}else{
+				clearInterval(timer);
+			}
+		}, 3000);
 	})
 
 });
@@ -55,6 +74,16 @@ var loadData = function(sport){
 
 
 };
+
+var displayImage = function(){
+	var path = webview.getImage();
+	webview.getString(path.toString());
+	$("#pic").empty();
+	var profilepic = $("<img src='"+ path + "' id='#profilepic' width='50' height='50'/>")
+	profilepic.appendTo("#pic");
+	
+}
+
 var displayTeam = function(data){
 	$("#team").empty();
 	
