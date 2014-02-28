@@ -1,5 +1,16 @@
 package com.jtilley.sportprofile;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	SportProfile
+ * 
+ * 	Package:	com.jtilley.sportprofile
+ * 
+ * 	File: 		MainActivity.java
+ * 	
+ * 	Purpose:	This activity contains the WebView displaying the index.html. The Activity's WebInterface communicates
+ * 				with the JavaScript and handles navigation and camera intents.
+*/
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,11 +48,7 @@ private static final int CAMERA_REQUEST = 1888;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		SharedPreferences prefs = this.getSharedPreferences("user_profile", 0);
-		if(prefs.getAll().size() > 0){
-			Log.i("PREFS", prefs.getAll().toString());
-		}
-		
+		//Setup WebView
 		WebView webView = (WebView) findViewById(R.id.webView1);
 		WebSettings settings = webView.getSettings();
 		settings.setJavaScriptEnabled(true);
@@ -58,6 +65,7 @@ private static final int CAMERA_REQUEST = 1888;
 		return true;
 	}
 
+	//Get Image from Camera and Save
 	public void onActivityResult(int requestCode, int resultCode, Intent data){
 		if(resultCode == RESULT_OK){
 			if(requestCode == CAMERA_REQUEST){
@@ -67,6 +75,7 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	//Save Image to External Storage
 	public void saveImage(){
 		File path = Environment.getExternalStoragePublicDirectory("/SportProfile/");
 		if(!path.exists()){
@@ -74,7 +83,6 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 		
 		filename = "profile" + String.valueOf(Calendar.getInstance().getTime().getTime()) + ".jpg";
-		
 		
 		File file = new File(path, filename);
 		try {
@@ -92,6 +100,7 @@ private static final int CAMERA_REQUEST = 1888;
 		}
 	}
 	
+	//WebInterface for WebView
 	public class WebAppInterface{
 		Context mContext;
 		
@@ -99,32 +108,45 @@ private static final int CAMERA_REQUEST = 1888;
 			mContext = context;
 		}
 		
-
+		//Log String from JavaScript
 		@JavascriptInterface
 		public void getString(String text){
 			Log.i("TEXT", text);
 		}
+
+		//Log Boolean Value from JavaScript
+		@JavascriptInterface
+		public void getBoolean(Boolean check){
+			Log.i("BOOLEAN", check.toString());
+		}
 		
+		//Open Camera Intent
 		@JavascriptInterface
 		public void getCamera(){
 			profilePic = null;
 			Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 			startActivityForResult(intent, CAMERA_REQUEST);
 		}
+		
+		//Check if Image has been Saved
 		@JavascriptInterface
 		public Boolean hasImage(){
 			if(profilePic != null){
 				return true;
+			}else{
+				return false;
 			}
-			return false;
 		}
+		
+		//Get Image Path and return to JavaScript
 		@JavascriptInterface
 		public String getImage(){
-			String path = "file:///sdcard/SportProfile/" + filename;
+			String path = "file:///mnt/sdcard/SportProfile/" + filename;
 			
 			return path;
 		}
 		
+		//Open ProfileActivity and Send User Data
 		@JavascriptInterface
 		public void openProfile(String user){
 			Intent intent = new Intent(mContext, ProfileActivity.class);
@@ -132,9 +154,9 @@ private static final int CAMERA_REQUEST = 1888;
 			startActivity(intent);
 		}
 		
+		//Save User Data to SharedPreferences
 		@JavascriptInterface
 		public void getAccount(String account){
-			//Log.i("ACCOUNT", account);
 			try {
 				JSONArray jsonArray = new JSONArray(account);
 				JSONObject jsonObj = jsonArray.getJSONObject(0);
@@ -149,13 +171,13 @@ private static final int CAMERA_REQUEST = 1888;
 					editPrefs.putString(jsonObj.getString("user"), jsonObj.toString());
 					editPrefs.commit();	
 				}
-				
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		
+		//Check if UserName is Valid
 		@JavascriptInterface
 		public Boolean hasUser(String user){
 			SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
@@ -168,11 +190,7 @@ private static final int CAMERA_REQUEST = 1888;
 			return false;
 		}
 		
-		@JavascriptInterface
-		public void getBoolean(Boolean check){
-			Log.i("BOOLEAN", check.toString());
-		}
-		
+		//Check if Password is Correct
 		@JavascriptInterface
 		public Boolean hasPassword(String user, String password){
 			SharedPreferences prefs = mContext.getSharedPreferences("user_profile", 0);
@@ -189,10 +207,8 @@ private static final int CAMERA_REQUEST = 1888;
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
 			}
 			return false;
 		}
-	
 	}
 }

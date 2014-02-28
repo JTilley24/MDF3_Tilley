@@ -1,3 +1,5 @@
+//Justin Tilley SportProfile MDF3 Project 4
+
 $("#home").on("pageinit", function(){
 	$("#login").on("click", function(){
 		$("#loginError").empty();

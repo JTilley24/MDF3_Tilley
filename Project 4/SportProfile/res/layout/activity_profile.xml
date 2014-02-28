@@ -6,6 +6,7 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
+    android:background="@drawable/gradient"
     tools:context=".ProfileActivity" >
 
     <TextView
@@ -15,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:text="@null" />
 	
@@ -34,6 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profilePic"
         android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_marginTop="30dp"
         android:text="@null" />
 
@@ -43,6 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/teamName"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:text="@null" />
 
@@ -52,6 +57,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/venue"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/red_button"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="36dp"
         android:text="@string/espn" />
 

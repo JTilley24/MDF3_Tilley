@@ -1,5 +1,16 @@
 package com.jtilley.sportprofile;
-
+/*
+ * 	Author: 	Justin Tilley
+ * 
+ * 	Project:	SportProfile
+ * 
+ * 	Package:	com.jtilley.sportprofile
+ * 
+ * 	File: 		ProfileActivity.java
+ * 	
+ * 	Purpose:	This Activity displays the User Information and Team Information from the Account the is logged in.
+ * 				UserName is passed from the MainActivity and a JSONObject from SharedPreferences is parsed and displayed.
+*/
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
@@ -47,12 +58,13 @@ String url;
 			}
 		});
 		
+		//Get Data from MainActivity
 		Intent intent = this.getIntent();
-		Log.i("USER", intent.getStringExtra("user"));
+		Log.i("USERNAME", intent.getStringExtra("user"));
 		String user = intent.getStringExtra("user");
 		SharedPreferences prefs = getSharedPreferences("user_profile", 0);
 		Map<String, ?> accounts = prefs.getAll();
-		Log.i("account" , accounts.get(user).toString());
+		Log.i("ACCOUNT" , accounts.get(user).toString());
 			try {
 				JSONObject account = new JSONObject(accounts.get(user).toString());
 				if(account != null){
@@ -71,6 +83,7 @@ String url;
 		return true;
 	}
 
+	//Display User Data 
 	public void displayData(JSONObject account){
 		try {
 			String firstname = account.get("firstname").toString();
@@ -90,6 +103,7 @@ String url;
 		}
 	}
 	
+	//Display Team Data
 	public void getTeamData(JSONObject team){
 		try {
 			JSONArray locArray = team.getJSONArray("venues");
@@ -103,6 +117,7 @@ String url;
 		}
 	}
 	
+	//Get Link to Espn for Team
 	public void getLink(JSONObject team){
 		try {
 			JSONObject link = team.getJSONObject("links");
@@ -115,6 +130,8 @@ String url;
 			e.printStackTrace();
 		}
 	}
+	
+	//Display Profile Picture
 	public void displayPic(JSONObject account){
 		try {
 			String picture = account.getString("picture");
@@ -143,6 +160,7 @@ String url;
 		}
 	}
 	
+	//Open Intent to Espn WebSite 
 	public void displayEspn(){
 		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		startActivity(intent);

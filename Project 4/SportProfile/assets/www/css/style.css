@@ -1,0 +1,14 @@
+/*Justin Tilley SportProfile MDF3 Project 4*/
+
+#loginError li{
+	color: red;
+}
+
+#valList li{
+	color: red;
+}
+#logo{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
