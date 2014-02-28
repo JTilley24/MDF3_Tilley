@@ -1,5 +1,6 @@
 $("#home").on("pageinit", function(){
 	$("#login").on("click", function(){
+		$("#loginError").empty();
 		var user = $("#enterUser").val();
 		var password = $("#enterPassword").val();
 		webview.hasUser(user);
@@ -11,7 +12,13 @@ $("#home").on("pageinit", function(){
 			webview.getBoolean(passcheck);
 			if(passcheck.toString() == "true"){
 				webview.openProfile(user);
+			}else{
+				var nopass = $("<li>Password is Incorrect.</li>");
+				nopass.appendTo($("#loginError"));
 			}
+		}else{
+			var nouser = $("<li>Username is Invalid.</li>");
+			nouser.appendTo($("#loginError"));
 		}
 		
 	});
